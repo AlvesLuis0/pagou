@@ -1,4 +1,4 @@
-package com.paydev.pagou.use_case
+package com.paydev.pagou.use_cases
 import android.content.Context
 import  com.paydev.pagou.daos.PersonDao
 import com.paydev.pagou.models.Person
