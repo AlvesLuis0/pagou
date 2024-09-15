@@ -11,69 +11,19 @@
       android:id="@+id/activity_list_people"
       android:layout_width="448dp"
       android:layout_height="998dp"
+      android:background="#A6EBE5"
       app:layout_constraintTop_toTopOf="parent"
       tools:context=".MainActivity"
-      tools:layout_editor_absoluteX="0dp"
-      tools:ignore="MissingConstraints">
+      tools:ignore="MissingConstraints"
+      tools:layout_editor_absoluteX="0dp">
 
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="198dp"
-        android:layout_height="56dp"
-        android:fontFamily="sans-serif-light"
-        android:text="Me deve/Eu devo:"
-        android:textSize="23sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.064"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.93" />
-
-    <EditText
-        android:id="@+id/editTextNumberDecimal2"
-        android:layout_width="222dp"
-        android:layout_height="65dp"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        android:textSize="23sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.946"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.906" />
-
-    <View
-        android:id="@+id/divider7"
-        android:layout_width="446dp"
-        android:layout_height="1dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.076"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.092" />
-
-    <SearchView
-        android:id="@+id/searchView2"
-        android:layout_width="317dp"
-        android:layout_height="46dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.098" />
 
     <TextView
         android:id="@+id/texPessoa"
-        android:layout_width="132dp"
-        android:layout_height="44dp"
-        android:fontFamily="sans-serif-light"
-        android:text="Pessoas"
+        android:layout_width="116dp"
+        android:layout_height="49dp"
+        android:fontFamily="sans-serif"
+        android:text="Pessoa"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -88,150 +38,90 @@
         android:background="?android:attr/listDivider"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.864"
-        tools:layout_editor_absoluteX="-2dp" />
+        app:layout_constraintVertical_bias="0.824"
+        tools:layout_editor_absoluteX="-1dp" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="47dp"
-        android:layout_height="47dp"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton3"
+        android:layout_width="55dp"
+        android:layout_height="57dp"
+        android:clickable="true"
+        app:backgroundTint="#9EC8BC"
+        app:borderWidth="0dp"
+        app:elevation="6dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.087"
+        app:layout_constraintHorizontal_bias="0.959"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.097"
-        app:srcCompat="@drawable/baseline_filter_alt_24" />
+        app:layout_constraintVertical_bias="0.787"
+        app:maxImageSize="24dp"
+        app:srcCompat="@drawable/baseline_add_24" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="46dp"
-        android:layout_height="47dp"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="388dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="44dp"
+        android:fontFamily="sans-serif-light"
+        android:text="Me devem/Eu devo R$999,99"
+        android:textSize="29sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.203"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider8"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="449dp"
+        android:layout_height="57dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.097"
-        app:srcCompat="@drawable/baseline_format_list_bulleted_24" />
+        app:layout_constraintVertical_bias="0.109">
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="46dp"
-        android:layout_height="47dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+      <com.google.android.material.floatingactionbutton.FloatingActionButton
+          android:id="@+id/floatingActionButton6"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_marginHorizontal="5dp"
+          android:clickable="true"
+          app:backgroundTint="#9EC8BC"
+          app:srcCompat="@drawable/baseline_filter_alt_24" />
+
+      <com.google.android.material.floatingactionbutton.FloatingActionButton
+          android:id="@+id/floatingActionButton7"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:clickable="true"
+          app:backgroundTint="#9EC8BC"
+          app:srcCompat="@drawable/baseline_format_line_spacing_24" />
+
+      <SearchView
+          android:id="@+id/searchView2"
+          android:layout_width="match_parent"
+          android:layout_height="56dp"
+          android:layout_marginHorizontal="5dp">
+
+      </SearchView>
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:clickable="true"
+        app:backgroundTint="#9EC8BC"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.203"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.936"
+        app:layout_constraintStart_toEndOf="@+id/texPessoa"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.097"
-        app:srcCompat="@drawable/baseline_format_list_bulleted_24" />
-
-    <View
-        android:id="@+id/divider10"
-        android:layout_width="1dp"
-        android:layout_height="45dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.286"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <View
-        android:id="@+id/divider3"
-        android:layout_width="1dp"
-        android:layout_height="46dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.181"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.098" />
-
-    <View
-        android:id="@+id/divider11"
-        android:layout_width="1dp"
-        android:layout_height="46dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/searchView2"
-        app:layout_constraintHorizontal_bias="0.078"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.098" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="91dp"
-        android:layout_height="92dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.887"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.766"
-        app:srcCompat="@drawable/baseline_add_circle_outline_24" />
-
-    <FrameLayout
-        android:id="@+id/frameLayout"
-        android:layout_width="448dp"
-        android:layout_height="136dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.215">
-
-    </FrameLayout>
-
-    <FrameLayout
-        android:id="@+id/frameLayout2"
-        android:layout_width="448dp"
-        android:layout_height="136dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.431">
-
-    </FrameLayout>
-
-    <FrameLayout
-        android:layout_width="448dp"
-        android:layout_height="136dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.647">
-
-    </FrameLayout>
-
-    <View
-        android:id="@+id/divider2"
-        android:layout_width="450dp"
-        android:layout_height="1dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.139" />
-
-    <View
-        android:id="@+id/divider6"
-        android:layout_width="1dp"
-        android:layout_height="46dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toBottomOf="@+id/divider10"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.290"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.098" />
+        app:srcCompat="@drawable/baseline_settings_24" />
 
   </androidx.constraintlayout.widget.ConstraintLayout>
 
