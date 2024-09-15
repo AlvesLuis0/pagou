@@ -1,128 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".activities.ListPeopleActivity">
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/background"
+  tools:context=".activities.ListPeopleActivity">
 
-  <androidx.constraintlayout.widget.ConstraintLayout
-      android:id="@+id/activity_list_people"
-      android:layout_width="448dp"
-      android:layout_height="998dp"
-      android:background="#A6EBE5"
-      app:layout_constraintTop_toTopOf="parent"
-      tools:context=".MainActivity"
-      tools:ignore="MissingConstraints"
-      tools:layout_editor_absoluteX="0dp">
+  <com.google.android.material.floatingactionbutton.FloatingActionButton
+    android:id="@+id/floatingActionButton17"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="7dp"
+    android:layout_marginBottom="87dp"
+    android:clickable="true"
+    app:backgroundTint="@color/button"
+    app:fabSize="auto"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="@+id/recyclerView3"
+    app:srcCompat="@drawable/baseline_add_24" />
 
+  <TextView
+    android:id="@+id/textView11"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="21dp"
+    android:fontFamily="sans-serif-black"
+    android:text="Me devem/Eu devo: R$9999,99"
+    android:textSize="23sp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/texPessoa"
-        android:layout_width="116dp"
-        android:layout_height="49dp"
-        android:fontFamily="sans-serif"
-        android:text="Pessoa"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.032" />
+  <View
+    android:id="@+id/view7"
+    android:layout_width="0dp"
+    android:layout_height="5dp"
+    android:layout_marginTop="68dp"
+    android:layout_marginBottom="70dp"
+    android:background="?android:attr/listDivider"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/floatingActionButton17" />
 
-    <View
-        android:id="@+id/divider8"
-        android:layout_width="450dp"
-        android:layout_height="6dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.824"
-        tools:layout_editor_absoluteX="-1dp" />
+  <TextView
+    android:id="@+id/textView10"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="15dp"
+    android:fontFamily="sans-serif-black"
+    android:text="Pessoas"
+    android:textSize="35sp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton3"
-        android:layout_width="55dp"
-        android:layout_height="57dp"
-        android:clickable="true"
-        app:backgroundTint="#9EC8BC"
-        app:borderWidth="0dp"
-        app:elevation="6dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.959"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.787"
-        app:maxImageSize="24dp"
-        app:srcCompat="@drawable/baseline_add_24" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="388dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="44dp"
-        android:fontFamily="sans-serif-light"
-        android:text="Me devem/Eu devo R$999,99"
-        android:textSize="29sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider8"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="449dp"
-        android:layout_height="57dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.109">
-
-      <com.google.android.material.floatingactionbutton.FloatingActionButton
-          android:id="@+id/floatingActionButton6"
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          android:layout_marginHorizontal="5dp"
-          android:clickable="true"
-          app:backgroundTint="#9EC8BC"
-          app:srcCompat="@drawable/baseline_filter_alt_24" />
-
-      <com.google.android.material.floatingactionbutton.FloatingActionButton
-          android:id="@+id/floatingActionButton7"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:clickable="true"
-          app:backgroundTint="#9EC8BC"
-          app:srcCompat="@drawable/baseline_format_line_spacing_24" />
-
-      <SearchView
-          android:id="@+id/searchView2"
-          android:layout_width="match_parent"
-          android:layout_height="56dp"
-          android:layout_marginHorizontal="5dp">
-
-      </SearchView>
-    </LinearLayout>
+  <LinearLayout
+    android:id="@+id/linearLayout4"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="3dp"
+    android:layout_marginTop="27dp"
+    android:orientation="horizontal"
+    android:paddingVertical="5dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/floatingActionButton16">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:clickable="true"
-        app:backgroundTint="#9EC8BC"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.936"
-        app:layout_constraintStart_toEndOf="@+id/texPessoa"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/baseline_settings_24" />
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginHorizontal="5dp"
+      android:clickable="true"
+      app:backgroundTint="@color/button"
+      app:srcCompat="@drawable/baseline_filter_alt_24" />
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginHorizontal="5dp"
+      android:clickable="true"
+      app:backgroundTint="@color/button"
+      app:srcCompat="@drawable/baseline_format_line_spacing_24" />
+
+    <android.widget.SearchView
+      android:layout_width="300dp"
+      android:layout_height="match_parent"
+      android:layout_marginHorizontal="5dp"
+      android:layout_weight="1" />
+
+  </LinearLayout>
+
+  <View
+    android:id="@+id/view6"
+    android:layout_width="0dp"
+    android:layout_height="5dp"
+    android:layout_marginTop="12dp"
+    android:layout_marginBottom="10dp"
+    android:background="?android:attr/listDivider"
+    app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/floatingActionButton16" />
+
+  <com.google.android.material.floatingactionbutton.FloatingActionButton
+    android:id="@+id/floatingActionButton16"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp"
+    android:layout_marginEnd="12dp"
+    android:clickable="true"
+    app:backgroundTint="@color/button"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:srcCompat="@drawable/baseline_settings_24" />
+
+  <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/recyclerView3"
+    android:layout_width="430dp"
+    android:layout_height="729dp"
+    android:layout_marginVertical="10dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginBottom="22dp"
+    app:layout_constraintBottom_toTopOf="@+id/view7"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
