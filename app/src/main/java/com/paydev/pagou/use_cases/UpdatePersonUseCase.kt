@@ -4,7 +4,7 @@ import  com.paydev.pagou.daos.PersonDao
 import com.paydev.pagou.models.Person
 import com.paydev.pagou.services.ServiceLocator
 
-class UpdateUseCase(context: Context) {
+class UpdatePersonUseCase(context: Context) {
   private var personDao: PersonDao = ServiceLocator.databaseService(context).personDao()
 
   fun execute(id: Long, name: String, contact: String, others: String?): Person {

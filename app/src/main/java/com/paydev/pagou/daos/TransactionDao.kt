@@ -19,9 +19,9 @@ interface TransactionDao {
     @Delete
     fun delete (transaction: Transaction): Int
 
-    @Query("Select id,value,description,classification,expiration,registration,status FROM `Transaction` WHERE personId = :personId ORDER BY registration DESC")
+    @Query("SELECT id,value,description,expiredAt,registeredAt,isActive FROM `Transaction` WHERE personId = :personId ORDER BY registeredAt DESC")
     fun getByPersonId(personId: Long): List<TransactionSummary>
 
-    @Query("Delete FROM `Transaction` WHERE personId = :personId")
+    @Query("DELETE FROM `Transaction` WHERE personId = :personId")
     fun deleteAllByPersonId(personId: Long)
 }

@@ -6,9 +6,8 @@ data class TransactionSummary(
 var id: Long,
 var value: Float,
 var description: String?,
-var classification: Classification,
-var expiration: Date?,
-var registration: Date,
-var status: Status,
+var expiredAt: Date?,
+var registeredAt: Date,
+var isActive: Boolean,
 )
 
