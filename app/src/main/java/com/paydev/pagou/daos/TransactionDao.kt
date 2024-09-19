@@ -24,4 +24,7 @@ interface TransactionDao {
 
     @Query("DELETE FROM `Transaction` WHERE personId = :personId")
     fun deleteAllByPersonId(personId: Long)
+
+    @Query("UPDATE `Transaction` SET isActive = 0 WHERE id = :id")
+    fun inactivateTransaction(id: Long)
 }
