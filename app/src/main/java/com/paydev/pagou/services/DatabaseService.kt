@@ -19,11 +19,16 @@ abstract class DatabaseService : RoomDatabase() {
   abstract fun transactionDao(): TransactionDao
 
   companion object {
-    fun create(context: Context): DatabaseService {
-      return Room
-        .databaseBuilder(context, DatabaseService::class.java, "pagou.db")
-        .allowMainThreadQueries()
-        .build()
+    private var instance: DatabaseService? = null
+
+    fun getInstance(context: Context): DatabaseService {
+      if(instance == null) {
+        instance = Room
+          .databaseBuilder(context, DatabaseService::class.java, "pagou.db")
+          .allowMainThreadQueries()
+          .build()
+      }
+      return instance!!
     }
   }
 }
