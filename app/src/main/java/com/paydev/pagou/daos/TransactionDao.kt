@@ -19,4 +19,7 @@ interface TransactionDao {
 
     @Query("UPDATE `Transaction` SET isActive = 0 WHERE id = :id")
     fun inactivateTransaction(id: Long)
+
+    @Query("SELECT SUM(value) FROM `transaction` WHERE isActive = 1")
+    fun getTotal(): Float
 }
