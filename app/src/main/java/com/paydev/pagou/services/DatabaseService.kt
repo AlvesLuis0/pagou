@@ -8,6 +8,7 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.paydev.pagou.converters.DateConverter
 import com.paydev.pagou.daos.PersonDao
+import com.paydev.pagou.daos.PersonReportDao
 import com.paydev.pagou.daos.TransactionDao
 import com.paydev.pagou.models.Person
 import com.paydev.pagou.models.Transaction
@@ -17,6 +18,7 @@ import com.paydev.pagou.models.Transaction
 abstract class DatabaseService : RoomDatabase() {
   abstract fun personDao(): PersonDao
   abstract fun transactionDao(): TransactionDao
+  abstract fun PersonReportDao(): PersonReportDao
 
   companion object {
     fun create(context: Context): DatabaseService {
