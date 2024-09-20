@@ -1,15 +1,17 @@
 package com.paydev.pagou.activities
 
-internal class {
-    inner class ListTransactionsActivity
+import android.content.Intent
+import android.os.Bundle
+import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import com.paydev.pagou.R
 
-    fun AppCompatActivity() {
-        var `fun`: override
-        onCreate(savedInstanceState)
-        if (Bundle)
-            run {
-                super.onCreate(savedInstanceState)
-                setContentView(R.layout.activity_list_people)
-            }
+
+class ListTransactionsActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_list_transactions)
     }
 }
+
+
