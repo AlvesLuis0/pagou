@@ -7,7 +7,7 @@ import com.paydev.pagou.models.PersonSummary
 
 @Dao
 interface PersonReportDao {
-    @Query("SELECT p.id, p.name, SUM(t.value) AS total FROM person p LEFT JOIN `transaction` t ON p.id = t.personId WHERE p.id = :personId AND t.isActive = 1 GROUP BY p.id")
+    @Query("SELECT p.id, p.name, SUM(t.value) AS total FROM person p LEFT JOIN `transaction` t ON p.id = t.personId WHERE p.id = :personId AND t.isActive = 1")
     fun getByPersonId(personId: Long): PersonBill
 
     @Query("SELECT p.id, p.name, t.expiredAt, SUM(t.value) AS total FROM person p LEFT JOIN `transaction` t ON p.id = t.personId WHERE t.isActive = 1 GROUP BY p.id")
