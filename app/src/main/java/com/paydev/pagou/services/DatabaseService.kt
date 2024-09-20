@@ -18,7 +18,7 @@ import com.paydev.pagou.models.Transaction
 abstract class DatabaseService : RoomDatabase() {
   abstract fun personDao(): PersonDao
   abstract fun transactionDao(): TransactionDao
-  abstract fun PersonReportDao(): PersonReportDao
+  abstract fun personReportDao(): PersonReportDao
 
   companion object {
     private var instance: DatabaseService? = null
