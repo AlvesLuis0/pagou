@@ -7,7 +7,7 @@ import java.util.Date
 
 @Entity(
     foreignKeys = [
-        ForeignKey(entity = Person::class, parentColumns = ["id"], childColumns = ["personId"])
+        ForeignKey(entity = Person::class, parentColumns = ["id"], childColumns = ["personId"], onDelete = ForeignKey.CASCADE)
     ]
 )
 data class Transaction(
@@ -16,9 +16,7 @@ data class Transaction(
     var personId: Long,
     var value: Float,
     var description: String?,
-    var classification: Classification,
-    var expiration: Date?,
-    var registration: Date,
-    var status: Status,
-
+    var expiredAt: Date?,
+    var registeredAt: Date,
+    var isActive: Boolean
 )
