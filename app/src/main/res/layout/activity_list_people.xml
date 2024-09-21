@@ -14,6 +14,7 @@
       android:layout_marginEnd="7dp"
       android:layout_marginBottom="87dp"
       android:clickable="true"
+      android:onClick="onClick"
       app:backgroundTint="@color/button"
       app:fabSize="auto"
       app:layout_constraintBottom_toBottomOf="parent"
@@ -126,20 +127,5 @@
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
-
-  <com.google.android.material.floatingactionbutton.FloatingActionButton
-      android:id="@+id/Button_Switch"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:clickable="true"
-      android:onClick="onClick"
-      app:backgroundTint="@color/button"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.04"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.012"
-      app:srcCompat="@drawable/baseline_keyboard_backspace_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,10 +1,8 @@
 package com.paydev.pagou.daos
 
 import androidx.room.Dao
-import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
-import androidx.room.Update
 import com.paydev.pagou.models.Transaction
 import com.paydev.pagou.models.TransactionSummary
 
@@ -12,12 +10,6 @@ import com.paydev.pagou.models.TransactionSummary
 interface TransactionDao {
     @Insert
     fun insert (transaction: Transaction): Long
-
-    @Update
-    fun update (transaction: Transaction): Int
-
-    @Delete
-    fun delete (transaction: Transaction): Int
 
     @Query("SELECT id,value,description,expiredAt,registeredAt,isActive FROM `Transaction` WHERE personId = :personId ORDER BY registeredAt DESC")
     fun getByPersonId(personId: Long): List<TransactionSummary>
@@ -27,4 +19,10 @@ interface TransactionDao {
 
     @Query("UPDATE `Transaction` SET isActive = 0 WHERE id = :id")
     fun inactivateTransaction(id: Long)
+
+    @Query("SELECT SUM(value) FROM `transaction` WHERE isActive = 1")
+    fun getTotal(): Float
+
+    @Query("SELECT * FROM `Transaction` WHERE id = :id")
+    fun getById(id: Long): Transaction
 }
