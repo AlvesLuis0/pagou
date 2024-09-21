@@ -22,4 +22,7 @@ interface TransactionDao {
 
     @Query("SELECT SUM(value) FROM `transaction` WHERE isActive = 1")
     fun getTotal(): Float
+
+    @Query("SELECT value FROM `Transaction` WHERE id = :id")
+    fun getValueById(id: Long): Float
 }
