@@ -1,12 +1,11 @@
 package com.paydev.pagou.use_cases
 
 import android.content.Context
-import com.paydev.pagou.daos.PersonDao
 import com.paydev.pagou.models.Person
 import com.paydev.pagou.services.DatabaseService
 
 class CreatePersonUseCase (context: Context){
-  private val personDao: PersonDao = DatabaseService
+  private val personDao = DatabaseService
     .getInstance(context)
     .personDao()
 

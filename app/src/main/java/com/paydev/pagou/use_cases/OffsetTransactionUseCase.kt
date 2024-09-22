@@ -3,13 +3,12 @@ package com.paydev.pagou.use_cases
 import android.content.Context
 import com.paydev.pagou.services.DatabaseService
 
-class OffsetTransactionUseCase(context: Context) {
-    private val _context = context
+class OffsetTransactionUseCase(private val context: Context) {
     private val transactionDao = DatabaseService.getInstance(context).transactionDao()
 
     fun execute(id:Long){
         val transaction = transactionDao.getById(id)
-        AddTransactionUseCase(_context).execute(transaction.personId, -transaction.value, null, null)
+        AddTransactionUseCase(context).execute(transaction.personId, -transaction.value, null, null)
 
     }
 }

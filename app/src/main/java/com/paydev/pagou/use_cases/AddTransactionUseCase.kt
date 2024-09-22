@@ -1,12 +1,11 @@
 package com.paydev.pagou.use_cases
 import android.content.Context
-import com.paydev.pagou.daos.TransactionDao
 import com.paydev.pagou.models.Transaction
 import com.paydev.pagou.services.DatabaseService
 import java.util.Date
 
 class AddTransactionUseCase(context: Context) {
-    private val transactionDao: TransactionDao = DatabaseService
+    private val transactionDao = DatabaseService
         .getInstance(context)
         .transactionDao()
 

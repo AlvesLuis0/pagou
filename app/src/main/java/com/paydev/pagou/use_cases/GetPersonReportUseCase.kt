@@ -13,14 +13,14 @@ class GetPersonReportUseCase (context: Context) {
         .getInstance(context)
         .transactionDao()
     data class PersonReport(
-        val personBill: PersonBill,
+        val bill: PersonBill,
         val transactions: List<TransactionSummary>
     )
 
     fun execute(id: Long): PersonReport {
-        val personBill = personReportDao.getByPersonId(id)
+        val bill = personReportDao.getByPersonId(id)
         val transactions = transactionDao.getByPersonId(id)
-        return PersonReport(personBill, transactions)
+        return PersonReport(bill, transactions)
     }
 
 }
