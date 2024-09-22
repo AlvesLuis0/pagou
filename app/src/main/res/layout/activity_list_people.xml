@@ -8,18 +8,18 @@
     tools:context=".activities.ListPeopleActivity">
 
   <com.google.android.material.floatingactionbutton.FloatingActionButton
-      android:id="@+id/floatingActionButton17"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginEnd="7dp"
-      android:layout_marginBottom="87dp"
-      android:clickable="true"
-      android:onClick="onClick"
-      app:backgroundTint="@color/button"
-      app:fabSize="auto"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="@+id/recyclerView3"
-      app:srcCompat="@drawable/baseline_add_24" />
+    android:id="@+id/floatingActionButton17"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="7dp"
+    android:layout_marginBottom="87dp"
+    android:clickable="true"
+    android:onClick="openAddPersonDialog"
+    app:backgroundTint="@color/button"
+    app:fabSize="auto"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="@+id/recyclerView3"
+    app:srcCompat="@drawable/baseline_add_24" />
 
   <TextView
       android:id="@+id/textView11"
