@@ -3,6 +3,8 @@ package com.paydev.pagou.activities
 import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
+import android.graphics.drawable.GradientDrawable
+import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
