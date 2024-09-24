@@ -18,9 +18,9 @@ class GetPersonReportUseCase (context: Context) {
     )
 
     fun execute(id: Long): PersonReport {
-        val bill = personReportDao.getByPersonId(id)
+        val info = personReportDao.getByPersonId(id)
         val transactions = transactionDao.getByPersonId(id)
-        return PersonReport(bill, transactions)
+        return PersonReport(info, transactions)
     }
 
 }

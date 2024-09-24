@@ -6,9 +6,8 @@ import com.paydev.pagou.services.DatabaseService
 class UpdatePersonUseCase(context: Context) {
   private var personDao = DatabaseService.getInstance(context).personDao()
 
-  fun execute(id: Long, name: String, contact: String, others: String?): Person {
+  fun execute(id: Long, name: String, contact: String, others: String?) {
     val person = Person(id, name, contact, others)
     personDao.update(person)
-    return person
   }
 }
