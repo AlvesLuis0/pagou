@@ -11,9 +11,10 @@ import com.paydev.pagou.daos.PersonDao
 import com.paydev.pagou.daos.PersonReportDao
 import com.paydev.pagou.daos.TransactionDao
 import com.paydev.pagou.models.Person
+import com.paydev.pagou.models.PersonReport
 import com.paydev.pagou.models.Transaction
 
-@Database(entities = [Person::class, Transaction::class], version = 1)
+@Database(entities = [Person::class, Transaction::class], views = [PersonReport::class] , version = 1)
 @TypeConverters(DateConverter::class, builtInTypeConverters = BuiltInTypeConverters())
 abstract class DatabaseService : RoomDatabase() {
   abstract fun personDao(): PersonDao
@@ -26,7 +27,7 @@ abstract class DatabaseService : RoomDatabase() {
     fun getInstance(context: Context): DatabaseService {
       if(instance == null) {
         instance = Room
-          .databaseBuilder(context, DatabaseService::class.java, "pagou.db")
+          .inMemoryDatabaseBuilder(context, DatabaseService::class.java)
           .allowMainThreadQueries()
           .build()
       }
