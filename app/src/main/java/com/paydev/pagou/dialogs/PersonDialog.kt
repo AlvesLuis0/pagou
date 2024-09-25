@@ -35,7 +35,7 @@ class PersonDialog(private val context: Context) {
   // chama função ao apertar em OK
   private fun execute() {
     // criando pessoa
-    CreatePersonUseCase(context)
+    val person = CreatePersonUseCase(context)
       .execute(
         nameInput.text.toString(),
         contactInput.text.toString(),
@@ -47,6 +47,7 @@ class PersonDialog(private val context: Context) {
       .show()
     // redireciona para próxima tela
     val intent = Intent(context, ListTransactionsActivity::class.java)
+    intent.putExtra("id", person.id)
     context.startActivity(intent)
   }
 
