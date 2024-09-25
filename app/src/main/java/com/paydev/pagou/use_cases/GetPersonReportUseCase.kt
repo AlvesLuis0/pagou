@@ -13,7 +13,7 @@ class GetPersonReportUseCase (context: Context) {
         .getInstance(context)
         .transactionDao()
     data class PersonReport(
-        val bill: PersonBill,
+        val info: PersonBill,
         val transactions: List<TransactionSummary>
     )
 
