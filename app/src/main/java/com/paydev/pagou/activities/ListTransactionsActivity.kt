@@ -26,12 +26,15 @@ class ListTransactionsActivity : AppCompatActivity() {
         var totalDescription = ""
         if(person.info.total < 0){
             totalDescription = "${person.info.name} está te devendo"
+            tvPersonTotal.setTextColor(getColor(R.color.negative_color))
         }
         else if(person.info.total > 0){
-            totalDescription = "Você deve ${person.info.name}"
+            totalDescription = "Você está devendo para ${person.info.name}"
+            tvPersonTotal.setTextColor(getColor(R.color.positive_color))
         }
         else{
             totalDescription = "${person.info.name} está quitado(a)"
+            tvPersonTotal.setTextColor(getColor(R.color.neutral_color))
         }
         tvPersonName.text = person.info.name
         tvPersonTotal.text = "Saldo: R$ %.2f".format(person.info.total)
