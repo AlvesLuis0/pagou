@@ -8,18 +8,18 @@
     tools:context=".activities.ListPeopleActivity">
 
   <com.google.android.material.floatingactionbutton.FloatingActionButton
-    android:id="@+id/floatingActionButton17"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginEnd="7dp"
-    android:layout_marginBottom="87dp"
-    android:clickable="true"
-    android:onClick="openAddPersonDialog"
-    app:backgroundTint="@color/button"
-    app:fabSize="auto"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="@+id/recyclerView3"
-    app:srcCompat="@drawable/baseline_add_24" />
+      android:id="@+id/floatingActionButton17"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="7dp"
+      android:layout_marginBottom="87dp"
+      android:clickable="true"
+      android:onClick="openAddPersonDialog"
+      app:backgroundTint="@color/button"
+      app:fabSize="auto"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="@+id/recyclerView3"
+      app:srcCompat="@drawable/baseline_add_24" />
 
   <TextView
       android:id="@+id/textView11"
@@ -45,18 +45,6 @@
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="@+id/floatingActionButton17" />
 
-  <TextView
-      android:id="@+id/person_text"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="15dp"
-      android:fontFamily="sans-serif-black"
-      android:text="Pessoas"
-      android:textSize="35sp"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent" />
-
   <LinearLayout
       android:id="@+id/linearLayout4"
       android:layout_width="wrap_content"
@@ -68,47 +56,13 @@
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/floatingActionButton16">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="5dp"
-        android:clickable="true"
-        app:backgroundTint="@color/button"
-        app:srcCompat="@drawable/baseline_filter_alt_24" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="5dp"
-        android:clickable="true"
-        app:backgroundTint="@color/button"
-        app:srcCompat="@drawable/baseline_format_line_spacing_24" />
-
-    <android.widget.SearchView
-        android:layout_width="300dp"
-        android:layout_height="match_parent"
-        android:layout_marginHorizontal="5dp"
-        android:layout_weight="1" />
-
   </LinearLayout>
-
-  <View
-      android:id="@+id/view6"
-      android:layout_width="0dp"
-      android:layout_height="5dp"
-      android:layout_marginTop="12dp"
-      android:layout_marginBottom="10dp"
-      android:background="?android:attr/listDivider"
-      app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/floatingActionButton16" />
 
   <com.google.android.material.floatingactionbutton.FloatingActionButton
       android:id="@+id/floatingActionButton16"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginTop="12dp"
+      android:layout_marginTop="16dp"
       android:layout_marginEnd="12dp"
       android:clickable="true"
       app:backgroundTint="@color/button"
@@ -118,8 +72,8 @@
 
   <androidx.recyclerview.widget.RecyclerView
       android:id="@+id/recyclerView3"
-      android:layout_width="430dp"
-      android:layout_height="729dp"
+      android:layout_width="433dp"
+      android:layout_height="810dp"
       android:layout_marginVertical="10dp"
       android:layout_marginTop="16dp"
       android:layout_marginBottom="22dp"
@@ -127,5 +81,46 @@
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
+
+  <com.google.android.material.floatingactionbutton.FloatingActionButton
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginHorizontal="5dp"
+      android:clickable="true"
+      app:backgroundTint="@color/button"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.02"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.019"
+      app:srcCompat="@drawable/baseline_filter_alt_24" />
+
+  <com.google.android.material.floatingactionbutton.FloatingActionButton
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginHorizontal="5dp"
+      android:clickable="true"
+      app:backgroundTint="@color/button"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.193"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.019"
+      app:srcCompat="@drawable/baseline_format_line_spacing_24" />
+
+  <android.widget.SearchView
+      android:id="@+id/searchView"
+      android:layout_width="210dp"
+      android:layout_height="54dp"
+      android:layout_marginHorizontal="5dp"
+      android:layout_weight="1"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.647"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.021" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

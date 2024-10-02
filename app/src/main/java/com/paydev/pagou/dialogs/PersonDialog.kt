@@ -21,7 +21,7 @@ class PersonDialog(private val context: Context) {
     .Builder(context)
     .setView(dialogView)
     .setNegativeButton("Cancelar") { dialog , _ -> dialog.cancel() }
-    .setPositiveButton("OK") { _, _ -> execute() }
+    .setPositiveButton("Adicionar") { _, _ -> execute() }
     .create()
 
   // inputs
@@ -54,19 +54,16 @@ class PersonDialog(private val context: Context) {
   companion object fun show() {
     // mostrando dialog
     dialog.show()
-    // inserindo cor do botão
-    val colorStateList = ColorStateList(
-      arrayOf(
-        intArrayOf(android.R.attr.state_pressed),
-        intArrayOf()
-      ),
-      intArrayOf(
-        Color.parseColor("#BDE3D1"),
-        Color.parseColor("#BDE3D1")
-      )
-    )
-    dialog
-      .getButton(AlertDialog.BUTTON_POSITIVE)
-      .setBackgroundTintList(colorStateList)
-  }
-}
+
+    // inserindo cor dos botões
+    dialog.getButton(AlertDialog.BUTTON_POSITIVE).apply {
+      // setBackgroundColor(Color.rgb(189, 227, 209)) // cor de fundo
+      setBackgroundColor(Color.rgb(93, 167, 78)) // cor de fundo
+      setTextColor(Color.rgb(237, 241, 255)) // cor do texto
+    }
+
+    dialog.getButton(AlertDialog.BUTTON_NEGATIVE).apply {
+      setBackgroundColor(Color.rgb(224, 48, 27)) // cor de fundo
+      setTextColor(Color.rgb(237, 241, 255)) // cor do texto
+    }
+  }}
