@@ -6,6 +6,7 @@ import androidx.room.PrimaryKey
 import java.util.Date
 
 @Entity(
+    ignoredColumns = ["errors"],
     foreignKeys = [
         ForeignKey(entity = Person::class, parentColumns = ["id"], childColumns = ["personId"], onDelete = ForeignKey.CASCADE)
     ]
@@ -19,4 +20,4 @@ data class Transaction(
     var expiredAt: Date?,
     var registeredAt: Date,
     var isActive: Boolean
-)
+): CustomEntity()
