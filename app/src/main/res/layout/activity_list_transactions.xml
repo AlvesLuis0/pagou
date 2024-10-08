@@ -10,38 +10,23 @@
         android:id="@+id/floatingActionButton17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="7dp"
-        android:layout_marginBottom="87dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="84dp"
         android:clickable="true"
         app:backgroundTint="@color/button"
         app:fabSize="auto"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/recyclerView3"
-        app:srcCompat="@drawable/baseline_add_24" />
-
-    <View
-        android:id="@+id/view7"
-        android:layout_width="0dp"
-        android:layout_height="5dp"
-        android:layout_marginTop="68dp"
-        android:layout_marginBottom="70dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/floatingActionButton17" />
+        app:srcCompat="@drawable/baseline_add_24" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView3"
-        android:layout_width="430dp"
-        android:layout_height="729dp"
+        android:layout_width="410dp"
+        android:layout_height="780dp"
         android:layout_marginVertical="10dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="22dp"
-        app:layout_constraintBottom_toTopOf="@+id/view7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
+        tools:layout_editor_absoluteY="175dp" />
 
     <View
         android:id="@+id/view6"
@@ -114,15 +99,16 @@
         android:id="@+id/button"
         android:layout_width="125dp"
         android:layout_height="55dp"
-        android:layout_marginBottom="12dp"
         android:backgroundTint="@color/negative_color"
         android:fontFamily="sans-serif-black"
         android:text="Zerar"
         android:textColor="#FFFF"
-        app:layout_constraintBottom_toTopOf="@+id/view7"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.739"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.712"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.91" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"
