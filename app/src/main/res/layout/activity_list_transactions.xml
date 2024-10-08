@@ -19,18 +19,6 @@
         app:layout_constraintEnd_toEndOf="@+id/recyclerView3"
         app:srcCompat="@drawable/baseline_add_24" />
 
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="21dp"
-        android:fontFamily="sans-serif-black"
-        android:text="Me devem/Eu devo: R$9999,99"
-        android:textSize="23sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <View
         android:id="@+id/view7"
         android:layout_width="0dp"
