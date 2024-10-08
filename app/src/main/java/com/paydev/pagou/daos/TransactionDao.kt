@@ -11,7 +11,7 @@ interface TransactionDao {
     @Insert
     fun insert (transaction: Transaction): Long
 
-    @Query("SELECT id,value,description,expiredAt,registeredAt,isActive FROM `Transaction` WHERE personId = :personId ORDER BY registeredAt DESC")
+    @Query("SELECT id,value,description,registeredAt,isActive FROM `Transaction` WHERE personId = :personId ORDER BY registeredAt DESC")
     fun getByPersonId(personId: Long): List<TransactionSummary>
 
     @Query("DELETE FROM `Transaction` WHERE personId = :personId")

@@ -13,7 +13,7 @@ class UpdateTransactionUseCase (private val context: Context) {
     fun execute (id: Long, personId: Long, description: String?, value: Float, expiredAt: Date?): Transaction {
         transactionDao.inactivateTransaction(id)
         val transaction = AddTransactionUseCase(context)
-            .execute(personId, value, description, expiredAt)
+            .execute(personId, value, description)
         return transaction
     }
 }

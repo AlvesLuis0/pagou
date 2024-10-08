@@ -9,8 +9,8 @@ class AddTransactionUseCase(context: Context) {
         .getInstance(context)
         .transactionDao()
 
-    fun execute (personId: Long , value: Float, description:String?, expiredAt: Date?): Transaction {
-        val transaction = Transaction (0, personId, value, description, expiredAt, Date(), true)
+    fun execute (personId: Long , value: Float, description:String?): Transaction {
+        val transaction = Transaction (0, personId, value, description, Date(), true)
         transaction.id = transactionDao.insert(transaction)
         return transaction
     }

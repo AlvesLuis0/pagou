@@ -17,7 +17,6 @@ data class Transaction(
     var personId: Long,
     var value: Float,
     var description: String?,
-    var expiredAt: Date?,
     var registeredAt: Date,
     var isActive: Boolean
 ): CustomEntity()
