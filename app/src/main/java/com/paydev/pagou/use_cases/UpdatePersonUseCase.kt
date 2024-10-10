@@ -8,6 +8,9 @@ class UpdatePersonUseCase(context: Context) {
 
   fun execute(id: Long, name: String, contact: String, others: String?) {
     val person = Person(id, name, contact, others)
-    personDao.update(person)
+    person.validate()
+    if (person.errors.isEmpty()) {
+      personDao.update(person)
+    }
   }
 }
