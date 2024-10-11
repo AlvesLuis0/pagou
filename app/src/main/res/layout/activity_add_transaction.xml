@@ -4,6 +4,11 @@
   android:layout_width="match_parent"
   android:layout_height="match_parent">
 
+  <TextView
+    android:id="@+id/errors_list"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+
   <EditText
     android:id="@+id/description_input"
     android:layout_width="match_parent"

@@ -1,4 +1,4 @@
-package com.paydev.pagou
+package com.paydev.pagou.utils
 
 import android.widget.EditText
 

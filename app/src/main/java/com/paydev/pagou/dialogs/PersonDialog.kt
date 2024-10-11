@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import com.paydev.pagou.InputUtils
+import com.paydev.pagou.utils.InputUtils
 import com.paydev.pagou.R
 import com.paydev.pagou.activities.ListTransactionsActivity
 import com.paydev.pagou.use_cases.CreatePersonUseCase
