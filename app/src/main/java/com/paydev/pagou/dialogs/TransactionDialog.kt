@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
+import com.paydev.pagou.InputUtils
 import com.paydev.pagou.R
 import com.paydev.pagou.use_cases.AddTransactionUseCase
 
@@ -35,8 +36,8 @@ class TransactionDialog(private val context: Context, private val personId: Long
     AddTransactionUseCase(context)
       .execute(
         personId,
-        valueInput.text.toString().toFloat(),
-        descriptionInput.text.toString()
+        InputUtils.getFloatOrNull(valueInput) ?: 0f,
+        InputUtils.getStringOrNull(descriptionInput)
       )
   }
 

@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import com.paydev.pagou.InputUtils
 import com.paydev.pagou.R
 import com.paydev.pagou.activities.ListTransactionsActivity
 import com.paydev.pagou.use_cases.CreatePersonUseCase
@@ -36,9 +37,9 @@ class PersonDialog(private val context: Context) {
     // criando pessoa
     val person = CreatePersonUseCase(context)
       .execute(
-        nameInput.text.toString(),
-        contactInput.text.toString(),
-        othersInput.text.toString()
+        InputUtils.getString(nameInput),
+        InputUtils.getString(contactInput),
+        InputUtils.getStringOrNull(othersInput)
       )
     // mostra mensagem de sucesso
     Toast
