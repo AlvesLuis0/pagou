@@ -1,29 +1,18 @@
 package com.paydev.pagou.dialogs
 
+import android.app.AlertDialog.Builder
 import android.content.Context
 import android.view.LayoutInflater
 import android.widget.EditText
-import androidx.appcompat.app.AlertDialog
 import com.paydev.pagou.InputUtils
 import com.paydev.pagou.R
 import com.paydev.pagou.use_cases.AddTransactionUseCase
 
-class TransactionDialog(private val context: Context, private val personId: Long, callback: () -> Unit) {
+class TransactionDialog(context: Context?, private val personId: Long, callback: () -> Unit) : Builder(context) {
   // construindo dialog
   private val dialogView = LayoutInflater
     .from(context)
     .inflate(R.layout.activity_add_transaction, null)
-  private val dialog = AlertDialog
-    .Builder(context)
-    .setView(dialogView)
-    .setTitle("Informações do valor")
-    .setNeutralButton("Abater") { dialog , _ -> dialog.cancel() } // TODO: Implementar função de abater mais tarde
-    .setNegativeButton("Cancelar") { dialog , _ -> dialog.cancel() }
-    .setPositiveButton("Adicionar") { _, _ ->
-      execute();
-      callback()
-    }
-    .create()
 
   // inputs
   private val descriptionInput = dialogView
@@ -31,7 +20,19 @@ class TransactionDialog(private val context: Context, private val personId: Long
   private val valueInput = dialogView
     .findViewById<EditText>(R.id.value_input)
 
-  // chama função ao apertar em OK
+  // construtor
+  init {
+    setTitle("Informações do valor")
+    setView(dialogView)
+    setNeutralButton("abater") { _, _ -> /* TODO: implementar abater */ }
+    setNegativeButton("cancelar") { dialog, _ -> dialog.cancel() }
+    setPositiveButton("ok") { _, _ ->
+      execute()
+      callback()
+    }
+  }
+
+  // ao confirmar
   private fun execute() {
     AddTransactionUseCase(context)
       .execute(
@@ -39,9 +40,5 @@ class TransactionDialog(private val context: Context, private val personId: Long
         InputUtils.getFloatOrNull(valueInput) ?: 0f,
         InputUtils.getStringOrNull(descriptionInput)
       )
-  }
-
-  fun show() {
-    dialog.show()
   }
 }
