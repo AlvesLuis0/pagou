@@ -7,7 +7,7 @@ import androidx.appcompat.app.AlertDialog
 import com.paydev.pagou.R
 import com.paydev.pagou.use_cases.AddTransactionUseCase
 
-class TransactionDialog(private val context: Context, personId: Long, callback: () -> Unit) {
+class TransactionDialog(private val context: Context, private val personId: Long, callback: () -> Unit) {
   // construindo dialog
   private val dialogView = LayoutInflater
     .from(context)
@@ -19,7 +19,7 @@ class TransactionDialog(private val context: Context, personId: Long, callback: 
     .setNeutralButton("Abater") { dialog , _ -> dialog.cancel() } // TODO: Implementar função de abater mais tarde
     .setNegativeButton("Cancelar") { dialog , _ -> dialog.cancel() }
     .setPositiveButton("Adicionar") { _, _ ->
-      execute(personId);
+      execute();
       callback()
     }
     .create()
@@ -31,7 +31,7 @@ class TransactionDialog(private val context: Context, personId: Long, callback: 
     .findViewById<EditText>(R.id.value_input)
 
   // chama função ao apertar em OK
-  private fun execute(personId: Long) {
+  private fun execute() {
     AddTransactionUseCase(context)
       .execute(
         personId,
