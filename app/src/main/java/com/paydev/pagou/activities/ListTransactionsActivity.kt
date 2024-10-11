@@ -1,9 +1,11 @@
 package com.paydev.pagou.activities
 
 import android.os.Bundle
+import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.paydev.pagou.R
+import com.paydev.pagou.dialogs.TransactionDialog
 import com.paydev.pagou.use_cases.GetPersonReportUseCase
 
 class ListTransactionsActivity : AppCompatActivity() {
@@ -12,13 +14,19 @@ class ListTransactionsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_transactions)
+        refreshInformations()
+    }
+
+    private fun refreshInformations() {
         getInformations()
         setInformations()
     }
+
     private fun getInformations() {
         val id = intent.getLongExtra("id", 0)
         person = GetPersonReportUseCase(this).execute(id)
     }
+
     private fun setInformations() {
         val tvPersonName: TextView = findViewById(R.id.person_view)
         val tvPersonTotal: TextView = findViewById(R.id.total_view)
@@ -40,7 +48,10 @@ class ListTransactionsActivity : AppCompatActivity() {
         tvPersonTotal.text = "Saldo: R$ %.2f".format(person.info.total)
         tvTotalDescription.text = totalDescription
     }
+
+    fun openAddTransactionDialog(view: View?) {
+        TransactionDialog(this, person.info.id)
+            { refreshInformations() }
+            .show()
+    }
 }
-
-
-

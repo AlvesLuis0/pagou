@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <EditText
+    android:id="@+id/description_input"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:ems="10"
+    android:gravity="start|top"
+    android:hint="Descrição (opcional)"
+    android:inputType="textMultiLine" />
+
+  <EditText
+    android:id="@+id/value_input"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:ems="10"
+    android:hint="Valor"
+    android:inputType="numberDecimal" />
+
+</LinearLayout>

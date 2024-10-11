@@ -2,7 +2,6 @@ package com.paydev.pagou.dialogs
 
 import android.content.Context
 import android.content.Intent
-import android.content.res.ColorStateList
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.widget.EditText
@@ -51,7 +50,7 @@ class PersonDialog(private val context: Context) {
     context.startActivity(intent)
   }
 
-  companion object fun show() {
+  fun show() {
     // mostrando dialog
     dialog.show()
 
@@ -66,4 +65,5 @@ class PersonDialog(private val context: Context) {
       setBackgroundColor(Color.rgb(224, 48, 27)) // cor de fundo
       setTextColor(Color.rgb(237, 241, 255)) // cor do texto
     }
-  }}
+  }
+}
