@@ -15,6 +15,7 @@ class TransactionDialog(private val context: Context, personId: Long, callback: 
   private val dialog = AlertDialog
     .Builder(context)
     .setView(dialogView)
+    .setTitle("Informações do valor")
     .setNeutralButton("Abater") { dialog , _ -> dialog.cancel() } // TODO: Implementar função de abater mais tarde
     .setNegativeButton("Cancelar") { dialog , _ -> dialog.cancel() }
     .setPositiveButton("Adicionar") { _, _ ->
