@@ -25,7 +25,7 @@ class TransactionDialog(context: Context?, private val personId: Long, private v
   private val valueInput = dialogView
     .findViewById<EditText>(R.id.value_input)
   private val errorsList = dialogView
-    .findViewById<TextView>(R.id.errors_list)
+    .findViewById<TextView>(R.id.transaction_errors_list)
 
   // construtor
   init {
