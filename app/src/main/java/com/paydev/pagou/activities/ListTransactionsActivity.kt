@@ -31,12 +31,12 @@ class ListTransactionsActivity : AppCompatActivity() {
         val tvPersonName: TextView = findViewById(R.id.person_view)
         val tvPersonTotal: TextView = findViewById(R.id.total_view)
         val tvTotalDescription: TextView = findViewById(R.id.total_description_view)
-        var totalDescription = ""
-        if(person.info.total < 0){
+        val totalDescription: String
+        if(person.info.total.isNegative()){
             totalDescription = "${person.info.name} está te devendo"
             tvPersonTotal.setTextColor(getColor(R.color.negative_color))
         }
-        else if(person.info.total > 0){
+        else if(person.info.total.isPositive()){
             totalDescription = "Você está devendo para ${person.info.name}"
             tvPersonTotal.setTextColor(getColor(R.color.positive_color))
         }
@@ -45,7 +45,7 @@ class ListTransactionsActivity : AppCompatActivity() {
             tvPersonTotal.setTextColor(getColor(R.color.neutral_color))
         }
         tvPersonName.text = person.info.name
-        tvPersonTotal.text = "Saldo: R$ %.2f".format(person.info.total)
+        tvPersonTotal.text = "Saldo: R$ ${person.info.total}"
         tvTotalDescription.text = totalDescription
     }
 

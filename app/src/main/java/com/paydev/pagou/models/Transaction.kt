@@ -15,7 +15,7 @@ data class Transaction(
     @PrimaryKey(autoGenerate = true)
     var id: Long,
     var personId: Long,
-    var value: Float,
+    var value: Currency,
     var description: String?,
     var registeredAt: Date,
     var isActive: Boolean

@@ -7,5 +7,5 @@ data class PersonBill(
     var name: String,
     var contact: String,
     var lastPayment: Date?,
-    var total: Float,
+    var total: Currency,
 )

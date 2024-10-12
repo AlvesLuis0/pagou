@@ -9,7 +9,7 @@ data class PersonReport(
     var name: String,
     var contact: String,
     var lastPayment: Date?,
-    var total: Float,
+    var total: Currency,
 )
 
 

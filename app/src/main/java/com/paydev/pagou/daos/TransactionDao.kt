@@ -3,6 +3,7 @@ package com.paydev.pagou.daos
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
+import com.paydev.pagou.models.Currency
 import com.paydev.pagou.models.Transaction
 import com.paydev.pagou.models.TransactionSummary
 
@@ -21,7 +22,7 @@ interface TransactionDao {
     fun inactivateTransaction(id: Long)
 
     @Query("SELECT SUM(value) FROM `transaction` WHERE isActive = 1")
-    fun getTotal(): Float
+    fun getTotal(): Currency
 
     @Query("SELECT * FROM `Transaction` WHERE id = :id")
     fun getById(id: Long): Transaction
