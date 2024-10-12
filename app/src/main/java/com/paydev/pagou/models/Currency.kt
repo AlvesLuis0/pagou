@@ -7,20 +7,20 @@ class Currency {
     setValue(value)
   }
 
-  constructor(value: Float) {
+  constructor(value: Double) {
     setValue(value)
   }
 
-  fun setValue(value: Float) {
-    this.value = (value * 100).toLong()
+  fun setValue(value: Double) {
+    this.value = (String.format("%.2f", value * 100).toDouble()).toLong()
   }
 
   fun setValue(value: Long) {
     this.value = value
   }
 
-  fun getValue(): Float {
-    return value / 100f
+  fun getValue(): Double {
+    return value / 100.toDouble()
   }
 
   fun getRealValue(): Long {

@@ -15,16 +15,16 @@ data class Person(
     errors.clear()
 
     if(name.isBlank()){
-      errors.add("nome não pode ser nulo")
+      errors.add("Nome é obrigatório")
     }
     if (contact.isBlank()){
-      errors.add("número de contato não pode ser nulo")
+      errors.add("Número de contato é obrigatório")
     }
-    if(name.length !in 3..16){
-      errors.add("O nome precisa ter entre 3 e 16 caracteres ")
+    if(name.length < 3){
+      errors.add("Nome precisa ter no mínimo 3 caracteres")
     }
-    if(contact.length !in 8..9){
-      errors.add("O número de contato inválido")
+    if(contact.length < 8){
+      errors.add("Número de contato inválido")
     }
   }
 

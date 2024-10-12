@@ -11,7 +11,7 @@ object InputUtils {
     return getString(input).ifBlank { null }
   }
 
-  fun getFloatOrNull(input: EditText): Float? {
-    return getStringOrNull(input)?.toFloatOrNull()
+  fun getDoubleOrNull(input: EditText): Double? {
+    return getStringOrNull(input)?.toDoubleOrNull()
   }
 }

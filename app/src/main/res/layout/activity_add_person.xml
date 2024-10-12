@@ -28,12 +28,13 @@
           android:layout_height="wrap_content" />
 
         <EditText
-            android:id="@+id/name_input"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Nome"
-            android:paddingBottom="20dp" />
+          android:id="@+id/name_input"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:ems="10"
+          android:hint="Nome"
+          android:maxLength="31"
+          android:paddingBottom="20dp" />
 
         <EditText
           android:id="@+id/contact_input"
@@ -42,19 +43,21 @@
           android:ems="10"
           android:hint="Contato"
           android:inputType="number"
+          android:maxLength="10"
           android:paddingBottom="20dp"
           tools:layout_editor_absoluteX="119dp"
           tools:layout_editor_absoluteY="156dp" />
 
         <EditText
-            android:id="@+id/others_input"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:gravity="start|top"
-            android:hint="Outros (Opcional)"
-            android:inputType="textMultiLine"
-            android:paddingBottom="20dp" />
+          android:id="@+id/others_input"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:ems="10"
+          android:gravity="start|top"
+          android:hint="Outros (Opcional)"
+          android:inputType="textMultiLine"
+          android:maxLength="151"
+          android:paddingBottom="20dp" />
 
     </LinearLayout>
 

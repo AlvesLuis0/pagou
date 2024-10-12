@@ -41,7 +41,7 @@ class TransactionDialog(context: Context?, private val personId: Long, private v
     return AddTransactionUseCase(context)
       .execute(
         personId,
-        InputUtils.getFloatOrNull(valueInput) ?: 0f,
+        InputUtils.getDoubleOrNull(valueInput) ?: 0.toDouble(),
         InputUtils.getStringOrNull(descriptionInput)
       )
   }
