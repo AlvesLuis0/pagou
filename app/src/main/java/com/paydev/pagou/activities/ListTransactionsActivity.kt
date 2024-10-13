@@ -5,7 +5,9 @@ import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.paydev.pagou.R
+import com.paydev.pagou.dialogs.AreYouSure
 import com.paydev.pagou.dialogs.TransactionDialog
+import com.paydev.pagou.use_cases.ClearTransactionUseCase
 import com.paydev.pagou.use_cases.GetPersonReportUseCase
 
 class ListTransactionsActivity : AppCompatActivity() {
@@ -53,5 +55,12 @@ class ListTransactionsActivity : AppCompatActivity() {
         TransactionDialog(this, person.info.id)
             { refreshInformations() }
             .show()
+    }
+
+    fun openClearTransactionsDialog(view: View?) {
+        AreYouSure(this) {
+            ClearTransactionUseCase(this).execute(person.info.id)
+            refreshInformations()
+        }.show()
     }
 }
