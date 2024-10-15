@@ -2,8 +2,11 @@
 <resources>
   <color name="background">#C6EBE8</color>
   <color name="button">#FFFF</color>
-  <color name="backgroundlittlesreen">#BDE3D1</color>
-  <color name="negative_color">#FA0303</color>"
+  <color name="negative_color">#FA0303</color>
   <color name="positive_color">#008000</color>
   <color name="neutral_color">#686765</color>
+
+  <color name="text">#000</color>
+  <color name="text_hint">#595959</color>
+  <color name="text_error">#F00</color>
 </resources>
