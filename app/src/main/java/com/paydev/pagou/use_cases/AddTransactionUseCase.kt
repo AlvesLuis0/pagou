@@ -12,7 +12,10 @@ class AddTransactionUseCase(context: Context) {
 
     fun execute (personId: Long , value: Double, description:String?): Transaction {
         val transaction = Transaction (0, personId, Currency(value), description, Date(), true)
-        transaction.id = transactionDao.insert(transaction)
+        transaction.validate()
+        if (transaction.errors.isEmpty()) {
+            transaction.id = transactionDao.insert(transaction)
+        }
         return transaction
     }
 }

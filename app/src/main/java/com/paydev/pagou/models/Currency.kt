@@ -35,6 +35,10 @@ class Currency {
     return value > 0
   }
 
+  fun isZero(): Boolean {
+    return value == 0L
+  }
+
   override fun toString(): String {
     return "%.2f".format(getValue())
   }

@@ -10,9 +10,12 @@ class UpdateTransactionUseCase (private val context: Context) {
         .transactionDao()
 
     fun execute (id: Long, personId: Long, description: String?, value: Double): Transaction {
-        transactionDao.inactivateTransaction(id)
         val transaction = AddTransactionUseCase(context)
             .execute(personId, value, description)
+        if (transaction.errors.isEmpty()) {
+            transactionDao.inactivateTransaction(id)
+        }
+
         return transaction
     }
 }

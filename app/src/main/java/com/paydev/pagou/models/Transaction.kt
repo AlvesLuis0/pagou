@@ -19,4 +19,13 @@ data class Transaction(
     var description: String?,
     var registeredAt: Date,
     var isActive: Boolean
-): CustomEntity()
+): CustomEntity(){
+    fun validate(){
+        errors.clear()
+
+        if(value.isZero()){
+            errors.add("Valor não pode ser zero")
+        }
+    }
+
+}
