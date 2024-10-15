@@ -12,7 +12,7 @@ class Currency {
   }
 
   fun setValue(value: Double) {
-    this.value = (String.format("%.2f", value * 100).toDouble()).toLong()
+    this.value = (value * 100).toLong()
   }
 
   fun setValue(value: Long) {

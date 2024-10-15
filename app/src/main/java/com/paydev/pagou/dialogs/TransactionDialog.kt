@@ -9,6 +9,7 @@ import android.widget.EditText
 import android.widget.TextView
 import com.paydev.pagou.utils.InputUtils
 import com.paydev.pagou.R
+import com.paydev.pagou.inputs.CurrencyInput
 import com.paydev.pagou.models.Transaction
 import com.paydev.pagou.use_cases.AddTransactionUseCase
 import com.paydev.pagou.utils.StringUtils
@@ -34,6 +35,7 @@ class TransactionDialog(context: Context?, private val personId: Long, private v
     setNeutralButton("abater") { _, _ -> }
     setNegativeButton("cancelar") { _, _ -> }
     setPositiveButton("ok") { _, _ -> }
+    valueInput.filters = arrayOf(CurrencyInput())
   }
 
   // ao confirmar
