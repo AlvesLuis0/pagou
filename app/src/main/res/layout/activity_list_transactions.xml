@@ -1,148 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/grandiant_background">
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-      android:id="@+id/floatingActionButton17"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginEnd="16dp"
-      android:layout_marginBottom="28dp"
-      android:clickable="true"
-      android:onClick="openAddTransactionDialog"
-      app:backgroundTint="@color/button"
-      app:fabSize="auto"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:srcCompat="@drawable/baseline_add_24" />
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@drawable/grandiant_background">
 
     <androidx.recyclerview.widget.RecyclerView
       android:id="@+id/transactions_recycler_view"
-      android:layout_width="396dp"
-      android:layout_height="701dp"
-      android:layout_marginVertical="10dp"
-      app:layout_constraintBottom_toBottomOf="parent"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:layout_margin="16dp"
+      app:layout_constraintBottom_toTopOf="@+id/linearLayout"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/view6"
-      app:layout_constraintVertical_bias="0.41" />
+      app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 
     <View
       android:id="@+id/view6"
-      android:layout_width="0dp"
+      android:layout_width="448dp"
       android:layout_height="5dp"
+      android:layout_marginTop="24dp"
       android:background="?android:attr/listDivider"
-      app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.0"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.088" />
+      app:layout_constraintTop_toBottomOf="@+id/person_view" />
+
+    <LinearLayout
+      android:id="@+id/linearLayout3"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="16dp"
+      android:orientation="vertical"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/view6">
+
+        <TextView
+          android:id="@+id/total_view"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:fontFamily="sans-serif-black"
+          android:text="Saldo: R$12,50"
+          android:textSize="25sp" />
+
+        <TextView
+          android:id="@+id/total_description_view"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:fontFamily="sans-serif-black"
+          android:text="Nome está te devendo"
+          android:textSize="16sp" />
+    </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
       android:id="@+id/floatingActionButton16"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
+      android:layout_marginTop="16dp"
+      android:layout_marginEnd="16dp"
       android:clickable="true"
       app:backgroundTint="@color/button"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.933"
-      app:layout_constraintStart_toStartOf="parent"
-      app:srcCompat="@drawable/baseline_settings_24"
-      tools:layout_editor_absoluteY="16dp" />
+      app:layout_constraintHorizontal_bias="1.0"
+      app:layout_constraintStart_toEndOf="@+id/person_view"
+      app:layout_constraintTop_toTopOf="parent"
+      app:srcCompat="@drawable/baseline_settings_24" />
 
     <TextView
       android:id="@+id/person_view"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginTop="20dp"
-      android:layout_marginBottom="13dp"
+      android:layout_marginTop="16dp"
       android:fontFamily="sans-serif-black"
       android:text="Nome"
       android:textSize="35sp"
-      app:layout_constraintBottom_toTopOf="@+id/view6"
       app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.501"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="1.0" />
+      app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/total_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-black"
-        android:text="Saldo: R$12,50"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.105"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.105" />
+    <LinearLayout
+      android:id="@+id/linearLayout2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="10dp"
+      android:orientation="horizontal"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/view6">
 
-    <TextView
-        android:id="@+id/total_description_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-black"
-        android:text="Nome está te devendo"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.101"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.143" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+          android:id="@+id/floatingActionButton"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_margin="6dp"
+          android:clickable="true"
+          app:backgroundTint="@color/button"
+          app:srcCompat="@drawable/baseline_person_24" />
 
-    <Button
-      android:id="@+id/button"
-      android:layout_width="125dp"
-      android:layout_height="55dp"
-      android:backgroundTint="@color/negative_color"
-      android:fontFamily="sans-serif-black"
-      android:onClick="openClearTransactionsDialog"
-      android:text="Zerar"
-      android:textColor="#FFFF"
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+          android:id="@+id/floatingActionButton2"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_margin="6dp"
+          android:clickable="true"
+          app:backgroundTint="@color/button"
+          app:srcCompat="@drawable/baseline_share_24" />
+    </LinearLayout>
+
+    <LinearLayout
+      android:id="@+id/linearLayout"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="10dp"
+      android:orientation="horizontal"
       app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.712"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.97" />
+      app:layout_constraintEnd_toEndOf="parent">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-      android:id="@+id/floatingActionButton"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="16dp"
-      android:clickable="true"
-      app:backgroundTint="@color/button"
-      app:layout_constraintBottom_toTopOf="@+id/transactions_recycler_view"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.788"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/view6"
-      app:layout_constraintVertical_bias="0.0"
-      app:srcCompat="@drawable/baseline_person_24" />
+        <Button
+          android:id="@+id/button"
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+          android:layout_margin="6dp"
+          android:backgroundTint="@color/negative_color"
+          android:fontFamily="sans-serif-black"
+          android:onClick="openClearTransactionsDialog"
+          android:text="Zerar"
+          android:textColor="#FFFF" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-      android:id="@+id/floatingActionButton2"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="17dp"
-      android:layout_marginBottom="25dp"
-      android:clickable="true"
-      app:backgroundTint="@color/button"
-      app:layout_constraintBottom_toTopOf="@+id/transactions_recycler_view"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.959"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/view6"
-      app:layout_constraintVertical_bias="0.083"
-      app:srcCompat="@drawable/baseline_share_24" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+          android:id="@+id/floatingActionButton17"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_margin="6dp"
+          android:clickable="true"
+          android:onClick="openAddTransactionDialog"
+          app:backgroundTint="@color/button"
+          app:fabSize="auto"
+          app:srcCompat="@drawable/baseline_add_24" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
