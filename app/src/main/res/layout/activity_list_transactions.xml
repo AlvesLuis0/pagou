@@ -20,7 +20,7 @@
         app:srcCompat="@drawable/baseline_add_24" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView3"
+        android:id="@+id/peopleList"
         android:layout_width="410dp"
         android:layout_height="780dp"
         android:layout_marginVertical="10dp"
@@ -117,7 +117,7 @@
         android:layout_marginTop="16dp"
         android:clickable="true"
         app:backgroundTint="@color/button"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerView3"
+        app:layout_constraintBottom_toTopOf="@+id/peopleList"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.732"
         app:layout_constraintStart_toStartOf="parent"
@@ -133,7 +133,7 @@
         android:layout_marginBottom="25dp"
         android:clickable="true"
         app:backgroundTint="@color/button"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerView3"
+        app:layout_constraintBottom_toTopOf="@+id/peopleList"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.905"
         app:layout_constraintStart_toStartOf="parent"

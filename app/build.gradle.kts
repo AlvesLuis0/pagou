@@ -47,4 +47,10 @@ dependencies {
   // ORM
   implementation(libs.androidx.room.runtime)
   ksp(libs.androidx.room.compiler)
+  // Adicionar RecyclerView
+  implementation(libs.androidx.recyclerview)
+  // Manipular items no RecyclerView
+  implementation(libs.androidx.recyclerview.selection)
+  // Adicionar CardView
+  implementation(libs.androidx.cardview)
 }
