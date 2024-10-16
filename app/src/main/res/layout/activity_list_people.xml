@@ -1,119 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/grandiant_background"
-    android:elevation="6dp"
-    tools:context=".activities.ListPeopleActivity">
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@drawable/grandiant_background"
+  android:elevation="6dp"
+  tools:context=".activities.ListPeopleActivity">
+
+  <LinearLayout
+    android:id="@+id/linearLayout4"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="10dp"
+    android:orientation="horizontal"
+    android:paddingVertical="5dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="3dp"
+      android:clickable="true"
+      app:backgroundTint="@color/button"
+      app:srcCompat="@drawable/baseline_filter_alt_24" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="3dp"
+      android:clickable="true"
+      app:backgroundTint="@color/button"
+      app:srcCompat="@drawable/baseline_format_line_spacing_24" />
+
+    <android.widget.SearchView
+      android:id="@+id/searchView"
+      android:layout_width="250dp"
+      android:layout_height="56dp"
+      android:layout_margin="3dp"
+      android:background="@drawable/search_view_bg"
+      android:elevation="6dp"
+      app:circularflow_defaultRadius="20dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+      android:id="@+id/floatingActionButton16"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="3dp"
+      android:clickable="true"
+      app:backgroundTint="@color/button"
+      app:srcCompat="@drawable/baseline_settings_24" />
+
+  </LinearLayout>
 
   <com.google.android.material.floatingactionbutton.FloatingActionButton
     android:id="@+id/floatingActionButton17"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="84dp"
+    android:layout_marginVertical="16dp"
+    android:layout_marginRight="16dp"
     android:clickable="true"
     android:onClick="openAddPersonDialog"
     app:backgroundTint="@color/button"
     app:fabSize="auto"
-    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintBottom_toTopOf="@+id/view7"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.959"
-    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/transactions_recycler_view"
     app:srcCompat="@drawable/baseline_add_24" />
 
   <TextView
-      android:id="@+id/textView11"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginBottom="21dp"
-      android:fontFamily="sans-serif-black"
-      android:text="Me devem/Eu devo: R$9999,99"
-      android:textSize="23sp"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent" />
+    android:id="@+id/textView11"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp"
+    android:fontFamily="sans-serif-black"
+    android:text="Me devem/Eu devo: R$9999,99"
+    android:textSize="23sp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.504"
+    app:layout_constraintStart_toStartOf="parent" />
 
   <View
-      android:id="@+id/view7"
-      android:layout_width="0dp"
-      android:layout_height="5dp"
-      android:layout_marginTop="68dp"
-      android:layout_marginBottom="70dp"
-      android:background="?android:attr/listDivider"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="@+id/floatingActionButton17" />
-
-  <com.google.android.material.floatingactionbutton.FloatingActionButton
-      android:id="@+id/floatingActionButton16"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="20dp"
-      android:layout_marginEnd="16dp"
-      android:clickable="true"
-      app:backgroundTint="@color/button"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:srcCompat="@drawable/baseline_settings_24" />
+    android:id="@+id/view7"
+    android:layout_width="448dp"
+    android:layout_height="5dp"
+    android:layout_marginBottom="18dp"
+    android:background="?android:attr/listDivider"
+    app:layout_constraintBottom_toTopOf="@+id/textView11"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent" />
 
   <androidx.recyclerview.widget.RecyclerView
     android:id="@+id/transactions_recycler_view"
-    android:layout_width="409dp"
-    android:layout_height="746dp"
-    android:layout_marginVertical="10dp"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
 
-    app:layout_constraintBottom_toBottomOf="parent"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="80dp"
+    app:layout_constraintBottom_toTopOf="@+id/view7"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.512"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.398" />
-
-  <com.google.android.material.floatingactionbutton.FloatingActionButton
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginHorizontal="5dp"
-      android:clickable="true"
-      app:backgroundTint="@color/button"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.02"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.019"
-      app:srcCompat="@drawable/baseline_filter_alt_24" />
-
-  <com.google.android.material.floatingactionbutton.FloatingActionButton
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginHorizontal="5dp"
-      android:clickable="true"
-      app:backgroundTint="@color/button"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.193"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.019"
-      app:srcCompat="@drawable/baseline_format_line_spacing_24" />
-
-  <android.widget.SearchView
-      android:id="@+id/searchView"
-      android:layout_width="210dp"
-      android:layout_height="54dp"
-      android:layout_marginHorizontal="5dp"
-      android:layout_weight="1"
-      android:background="@drawable/search_view_bg"
-      android:elevation="6dp"
-      app:circularflow_defaultRadius="20dp"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.647"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.021" />
+    app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

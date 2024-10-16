@@ -13,7 +13,7 @@ class PeopleListAdapter(private val personList: List <PersonReport>) : RecyclerV
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         // that is used to hold list item
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.person_recycler_view, parent, false)
+            .inflate(R.layout.recycler_view_person, parent, false)
 
         return ViewHolder(view)
     }
