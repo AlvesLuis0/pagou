@@ -71,8 +71,12 @@ class TransactionDialog(context: Context?, private val personId: Long, private v
     }
 
     dialog.getButton(AlertDialog.BUTTON_NEGATIVE).apply {
-      setBackgroundColor(Color.rgb(224, 48, 27)) // cor de fundo
-      setTextColor(Color.rgb(237, 241, 255)) // cor do texto
+      setBackgroundColor(Color.rgb(224, 48, 27))
+      setTextColor(Color.rgb(237, 241, 255))
+    }
+    dialog.getButton(AlertDialog.BUTTON_NEUTRAL).apply {
+      setBackgroundColor(Color.rgb(40, 50, 200))
+      setTextColor(Color.rgb(237, 241, 255))
     }
     return dialog
   }

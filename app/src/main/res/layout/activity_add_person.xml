@@ -1,62 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/background"
+    android:background="@drawable/grandiant_background"
+    android:orientation="vertical"
     android:padding="16dp">
 
     <TextView
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:fontFamily="sans-serif-black"
-      android:paddingTop="15dp"
-      android:paddingBottom="15dp"
-      android:text="Informações da pessoa"
-      android:textAlignment="center"
-      android:textColor="@color/text"
-      android:textSize="26sp" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:text="Informações da pessoa"
+        android:textAlignment="center"
+        android:textColor="@color/text"
+        android:textSize="26sp" />
 
     <TextView
-      android:id="@+id/person_errors_list"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:textColor="@color/text_error" />
+        android:id="@+id/person_errors_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_error" />
 
     <EditText
-      android:id="@+id/name_input"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:ems="10"
-      android:hint="Nome"
-      android:maxLength="31"
-      android:textColor="@color/text"
-      android:textColorHint="@color/text_hint" />
+        android:id="@+id/name_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Nome"
+        android:maxLength="31"
+        android:textColor="@color/text"
+        android:textColorHint="@color/text_hint" />
 
     <EditText
-      android:id="@+id/contact_input"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:ems="10"
-      android:hint="Contato"
-      android:inputType="number"
-      android:maxLength="10"
-      android:textColor="@color/text"
-      android:textColorHint="@color/text_hint"
-      tools:layout_editor_absoluteX="119dp"
-      tools:layout_editor_absoluteY="156dp" />
+        android:id="@+id/contact_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Contato"
+        android:inputType="number"
+        android:maxLength="10"
+        android:textColor="@color/text"
+        android:textColorHint="@color/text_hint"
+        tools:layout_editor_absoluteX="119dp"
+        tools:layout_editor_absoluteY="156dp" />
 
     <EditText
-      android:id="@+id/others_input"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:ems="10"
-      android:gravity="start|top"
-      android:hint="Outros (Opcional)"
-      android:inputType="textMultiLine"
-      android:maxLength="151"
-      android:textColor="@color/text"
-      android:textColorHint="@color/text_hint" />
+        android:id="@+id/others_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Outros (Opcional)"
+        android:inputType="textMultiLine"
+        android:maxLength="151"
+        android:textColor="@color/text"
+        android:textColorHint="@color/text_hint" />
 
 </LinearLayout>
