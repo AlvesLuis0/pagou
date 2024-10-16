@@ -20,7 +20,7 @@ class ListPeopleActivity : AppCompatActivity() {
     setContentView(R.layout.activity_list_people)
 
     // this creates a vertical layout Manager
-    recyclerview = findViewById(R.id.peopleList)
+    recyclerview = findViewById(R.id.transactions_recycler_view)
     recyclerview.layoutManager = LinearLayoutManager(this)
 
   }

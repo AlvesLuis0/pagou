@@ -6,6 +6,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import com.paydev.pagou.converters.CurrencyConverter
 import com.paydev.pagou.converters.DateConverter
 import com.paydev.pagou.daos.PersonDao
 import com.paydev.pagou.daos.PersonReportDao
@@ -15,7 +16,7 @@ import com.paydev.pagou.models.PersonReport
 import com.paydev.pagou.models.Transaction
 
 @Database(entities = [Person::class, Transaction::class], views = [PersonReport::class] , version = 1)
-@TypeConverters(DateConverter::class, builtInTypeConverters = BuiltInTypeConverters())
+@TypeConverters(DateConverter::class, CurrencyConverter::class, builtInTypeConverters = BuiltInTypeConverters())
 abstract class DatabaseService : RoomDatabase() {
   abstract fun personDao(): PersonDao
   abstract fun transactionDao(): TransactionDao

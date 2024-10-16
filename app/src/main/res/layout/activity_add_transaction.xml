@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/grandiant_background"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:fontFamily="sans-serif-black"
+      android:paddingTop="15dp"
+      android:paddingBottom="15dp"
+      android:text="Informações do valor"
+      android:textAlignment="center"
+      android:textColor="@color/text"
+      android:textSize="26sp" />
+
+  <TextView
+      android:id="@+id/transaction_errors_list"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textColor="@color/text_error" />
+
+  <EditText
+      android:id="@+id/description_input"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:ems="10"
+      android:gravity="start|top"
+      android:hint="Descrição (opcional)"
+      android:inputType="textMultiLine"
+      android:maxLength="61"
+      android:textColor="@color/text"
+      android:textColorHint="@color/text_hint" />
+
+  <EditText
+      android:id="@+id/value_input"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:ems="10"
+      android:hint="Valor"
+      android:inputType="number|numberDecimal|numberSigned"
+      android:textColor="@color/text"
+      android:textColorHint="@color/text_hint" />
+
+</LinearLayout>

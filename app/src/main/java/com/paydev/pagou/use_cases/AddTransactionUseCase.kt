@@ -1,5 +1,6 @@
 package com.paydev.pagou.use_cases
 import android.content.Context
+import com.paydev.pagou.models.Currency
 import com.paydev.pagou.models.Transaction
 import com.paydev.pagou.services.DatabaseService
 import java.util.Date
@@ -9,9 +10,12 @@ class AddTransactionUseCase(context: Context) {
         .getInstance(context)
         .transactionDao()
 
-    fun execute (personId: Long , value: Float, description:String?, expiredAt: Date?): Transaction {
-        val transaction = Transaction (0, personId, value, description, expiredAt, Date(), true)
-        transaction.id = transactionDao.insert(transaction)
+    fun execute (personId: Long , value: Double, description:String?): Transaction {
+        val transaction = Transaction (0, personId, Currency(value), description, Date(), true)
+        transaction.validate()
+        if (transaction.errors.isEmpty()) {
+            transaction.id = transactionDao.insert(transaction)
+        }
         return transaction
     }
 }

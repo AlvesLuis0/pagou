@@ -10,6 +10,6 @@ class OffsetTransactionUseCase(private val context: Context) {
     fun execute(id:Long): Transaction {
         val transaction = transactionDao.getById(id)
         return AddTransactionUseCase(context)
-            .execute(transaction.personId, -transaction.value, null, null)
+            .execute(transaction.personId, -transaction.value.getValue(), null)
     }
 }

@@ -1,8 +1,11 @@
 package com.paydev.pagou.models
 
+import java.util.Date
 
 data class PersonBill(
     var id: Long,
     var name: String,
-    var total: Float,
+    var contact: String,
+    var lastPayment: Date?,
+    var total: Currency,
 )

@@ -9,18 +9,19 @@
     tools:context=".activities.ListPeopleActivity">
 
   <com.google.android.material.floatingactionbutton.FloatingActionButton
-      android:id="@+id/floatingActionButton17"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginEnd="7dp"
-      android:layout_marginBottom="87dp"
-      android:clickable="true"
-      android:onClick="openAddPersonDialog"
-      app:backgroundTint="@color/button"
-      app:fabSize="auto"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="@+id/peopleList"
-      app:srcCompat="@drawable/baseline_add_24" />
+    android:id="@+id/floatingActionButton17"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="84dp"
+    android:clickable="true"
+    android:onClick="openAddPersonDialog"
+    app:backgroundTint="@color/button"
+    app:fabSize="auto"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.959"
+    app:layout_constraintStart_toStartOf="parent"
+    app:srcCompat="@drawable/baseline_add_24" />
 
   <TextView
       android:id="@+id/textView11"
@@ -46,19 +47,6 @@
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="@+id/floatingActionButton17" />
 
-  <LinearLayout
-      android:id="@+id/linearLayout4"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="3dp"
-      android:layout_marginTop="27dp"
-      android:orientation="horizontal"
-      android:paddingVertical="5dp"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/floatingActionButton16">
-
-  </LinearLayout>
-
   <com.google.android.material.floatingactionbutton.FloatingActionButton
       android:id="@+id/floatingActionButton16"
       android:layout_width="wrap_content"
@@ -72,17 +60,16 @@
       app:srcCompat="@drawable/baseline_settings_24" />
 
   <androidx.recyclerview.widget.RecyclerView
-      android:id="@+id/peopleList"
-      android:layout_width="433dp"
-      android:layout_height="810dp"
-      android:layout_marginVertical="10dp"
-      android:layout_marginTop="16dp"
-      android:layout_marginBottom="22dp"
+    android:id="@+id/transactions_recycler_view"
+    android:layout_width="409dp"
+    android:layout_height="746dp"
+    android:layout_marginVertical="10dp"
 
-      app:layout_constraintBottom_toTopOf="@+id/view7"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.363" />
 
   <com.google.android.material.floatingactionbutton.FloatingActionButton
       android:layout_width="wrap_content"

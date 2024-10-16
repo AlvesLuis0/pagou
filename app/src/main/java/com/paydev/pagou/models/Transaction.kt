@@ -15,9 +15,17 @@ data class Transaction(
     @PrimaryKey(autoGenerate = true)
     var id: Long,
     var personId: Long,
-    var value: Float,
+    var value: Currency,
     var description: String?,
-    var expiredAt: Date?,
     var registeredAt: Date,
     var isActive: Boolean
-): CustomEntity()
+): CustomEntity(){
+    fun validate(){
+        errors.clear()
+
+        if(value.isZero()){
+            errors.add("Valor não pode ser zero")
+        }
+    }
+
+}

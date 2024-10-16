@@ -10,4 +10,23 @@ data class Person(
   var name: String,
   var contact: String,
   var others: String?
-) : CustomEntity()
+) : CustomEntity() {
+  fun validate(){
+    errors.clear()
+
+    if(name.isBlank()){
+      errors.add("Nome é obrigatório")
+    }
+    if (contact.isBlank()){
+      errors.add("Número de contato é obrigatório")
+    }
+    if(name.length < 3){
+      errors.add("Nome precisa ter no mínimo 3 caracteres")
+    }
+    if(contact.length < 8){
+      errors.add("Número de contato inválido")
+    }
+  }
+
+}
+
