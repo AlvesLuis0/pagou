@@ -4,7 +4,10 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.paydev.pagou.R
+import com.paydev.pagou.adapters.TransactionsAdapter
 import com.paydev.pagou.dialogs.AreYouSure
 import com.paydev.pagou.dialogs.TransactionDialog
 import com.paydev.pagou.use_cases.ClearTransactionUseCase
@@ -34,6 +37,7 @@ class ListTransactionsActivity : AppCompatActivity() {
         val tvPersonTotal: TextView = findViewById(R.id.total_view)
         val tvTotalDescription: TextView = findViewById(R.id.total_description_view)
         val totalDescription: String
+        val transactionsRecyclerView: RecyclerView = findViewById(R.id.transactions_recycler_view)
         if(person.info.total.isNegative()){
             totalDescription = "${person.info.name} está te devendo"
             tvPersonTotal.setTextColor(getColor(R.color.negative_color))
@@ -49,6 +53,8 @@ class ListTransactionsActivity : AppCompatActivity() {
         tvPersonName.text = person.info.name
         tvPersonTotal.text = "Saldo: R$ ${person.info.total}"
         tvTotalDescription.text = totalDescription
+        transactionsRecyclerView.layoutManager = LinearLayoutManager(this)
+        transactionsRecyclerView.adapter = TransactionsAdapter(person.transactions)
     }
 
     fun openAddTransactionDialog(view: View?) {
