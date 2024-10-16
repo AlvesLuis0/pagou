@@ -1,4 +1,4 @@
-package com.paydev.pagou.adapter
+package com.paydev.pagou.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup

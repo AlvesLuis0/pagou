@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.paydev.pagou.R
-import com.paydev.pagou.adapter.PeopleListAdapter
+import com.paydev.pagou.adapters.PeopleListAdapter
 import com.paydev.pagou.dialogs.PersonDialog
 import com.paydev.pagou.use_cases.GetUserInfoUseCase
 
