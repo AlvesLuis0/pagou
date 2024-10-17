@@ -27,14 +27,14 @@
         android:textStyle="bold" />
 
       <TextView
-        android:id="@+id/tv_registered_at"
+        android:id="@+id/tv_last_payment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Último pagamento em 99/99/9999"/>
     </LinearLayout>
 
     <TextView
-      android:id="@+id/tv_value"
+      android:id="@+id/tv_total"
       android:layout_width="wrap_content"
       android:layout_height="match_parent"
       android:layout_weight="1"

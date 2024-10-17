@@ -10,7 +10,7 @@ import com.paydev.pagou.R
 import com.paydev.pagou.models.TransactionSummary
 import com.paydev.pagou.utils.DateUtils
 
-class TransactionsAdapter(private val data: List<TransactionSummary>) : RecyclerView.Adapter<TransactionsAdapter.ViewHolder>() {
+class TransactionsListAdapter(private val data: List<TransactionSummary>) : RecyclerView.Adapter<TransactionsListAdapter.ViewHolder>() {
   class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     val tvDescription = view.findViewById<TextView>(R.id.tv_description)
     val tvRegisteredAt = view.findViewById<TextView>(R.id.tv_registered_at)
@@ -29,7 +29,12 @@ class TransactionsAdapter(private val data: List<TransactionSummary>) : Recycler
 
   override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
     val transaction = data.elementAt(position)
-    viewHolder.tvDescription.text = transaction.description
+
+    if(transaction.description != null)
+      viewHolder.tvDescription.text = transaction.description
+    else
+      viewHolder.tvDescription.text = "(Sem descrição)"
+
     viewHolder.tvRegisteredAt.text = "Registrado em ${DateUtils.format(transaction.registeredAt)}"
     viewHolder.tvValue.apply {
       text = "R$ ${transaction.value}"

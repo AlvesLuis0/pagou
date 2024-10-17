@@ -6,35 +6,56 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.paydev.pagou.R
 import com.paydev.pagou.models.PersonReport
+import com.paydev.pagou.utils.DateUtils
 
 class PeopleListAdapter(private val personList: List <PersonReport>) : RecyclerView.Adapter<PeopleListAdapter.ViewHolder>() {
 
-    // create new views
+    // Criando nova classe ViewHolder
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        // that is used to hold list item
+        // Criando uma nova view
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.recycler_view_person, parent, false)
 
         return ViewHolder(view)
     }
 
-    // binds the list items to a view
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    // Mesclar os itens da lista com o View
+    override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
 
         val person = personList.elementAt(position)
+        // Atribuir o texto para o textview a partir da classe itemHolder
+        viewHolder.tvPersonName.text = person.name
 
-        // sets the text to the textview from our itemHolder class
-        holder.tvPersonName.text = person.name
+        if(person.lastPayment != null) {
+            viewHolder.tvLastPayment.text = "Último pagamento\nem ${DateUtils.format(person.lastPayment!!)}"
+        }
+        else {
+            viewHolder.tvLastPayment.text = "(Nenhum pagamento feito)"
+        }
+        viewHolder.tvTotal.apply {
+
+            text = "R$ ${person.total}"
+            val color =
+                if (person.total.isPositive()) R.color.positive_color
+                else if (person.total.isNegative()) R.color.negative_color
+                else R.color.neutral_color
+            setTextColor(resources.getColor(color, null))
+
+            if (person.total.isZero()) {
+                viewHolder.tvLastPayment.text = "Está quitado"
+            }
+        }
 
     }
-
-    // return the number of the items in the list
+    // retornar a quantidade de itens na lista
     override fun getItemCount(): Int {
         return personList.size
     }
 
-    // Holds the views for adding it to image and text
+    // mesclando os itens da lista com o ID
     class ViewHolder(personView: View) : RecyclerView.ViewHolder(personView) {
         val tvPersonName: TextView = personView.findViewById(R.id.tv_person_name)
+        val tvLastPayment: TextView = personView.findViewById(R.id.tv_last_payment)
+        val tvTotal: TextView = personView.findViewById(R.id.tv_total)
     }
 }

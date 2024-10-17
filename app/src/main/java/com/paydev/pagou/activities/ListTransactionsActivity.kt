@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.paydev.pagou.R
-import com.paydev.pagou.adapters.TransactionsAdapter
+import com.paydev.pagou.adapters.TransactionsListAdapter
 import com.paydev.pagou.dialogs.AreYouSure
 import com.paydev.pagou.dialogs.TransactionDialog
 import com.paydev.pagou.use_cases.ClearTransactionUseCase
@@ -54,7 +54,7 @@ class ListTransactionsActivity : AppCompatActivity() {
         tvPersonTotal.text = "Saldo: R$ ${person.info.total}"
         tvTotalDescription.text = totalDescription
         transactionsRecyclerView.layoutManager = LinearLayoutManager(this)
-        transactionsRecyclerView.adapter = TransactionsAdapter(person.transactions)
+        transactionsRecyclerView.adapter = TransactionsListAdapter(person.transactions)
     }
 
     fun openAddTransactionDialog(view: View?) {
