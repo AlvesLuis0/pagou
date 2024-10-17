@@ -1,5 +1,6 @@
 package com.paydev.pagou.adapters
 
+import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,6 +31,15 @@ class TransactionsAdapter(private val data: List<TransactionSummary>) : Recycler
     val transaction = data.elementAt(position)
     viewHolder.tvDescription.text = transaction.description
     viewHolder.tvRegisteredAt.text = "Registrado em ${DateUtils.format(transaction.registeredAt)}"
-    viewHolder.tvValue.text = "R$ ${transaction.value}"
+    viewHolder.tvValue.apply {
+      text = "R$ ${transaction.value}"
+      val color =
+        if (transaction.value.isPositive()) R.color.positive_color
+        else R.color.negative_color
+      setTextColor(resources.getColor(color, null))
+    }
+    if(!transaction.isActive)
+      listOf(viewHolder.tvDescription, viewHolder.tvRegisteredAt, viewHolder.tvValue)
+        .forEach { item -> item.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG }
   }
 }
