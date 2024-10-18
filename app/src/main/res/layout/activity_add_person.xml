@@ -35,17 +35,17 @@
         android:textColorHint="@color/text_hint" />
 
     <EditText
-        android:id="@+id/contact_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Contato"
-        android:inputType="number"
-        android:maxLength="10"
-        android:textColor="@color/text"
-        android:textColorHint="@color/text_hint"
-        tools:layout_editor_absoluteX="119dp"
-        tools:layout_editor_absoluteY="156dp" />
+      android:id="@+id/contact_input"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:ems="10"
+      android:hint="Contato"
+      android:inputType="number"
+      android:maxLength="12"
+      android:textColor="@color/text"
+      android:textColorHint="@color/text_hint"
+      tools:layout_editor_absoluteX="119dp"
+      tools:layout_editor_absoluteY="156dp" />
 
     <EditText
         android:id="@+id/others_input"
