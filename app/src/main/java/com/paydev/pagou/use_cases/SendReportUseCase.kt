@@ -2,6 +2,7 @@ package com.paydev.pagou.use_cases
 
 import android.content.Context
 import com.paydev.pagou.services.WhatsAppService
+import com.paydev.pagou.utils.DateUtils
 
 class SendReportUseCase (private val context: Context) {
     fun execute(id:Long) {
@@ -19,9 +20,9 @@ class SendReportUseCase (private val context: Context) {
             for (transaction in person.transactions){
                 transaction.description = transaction.description ?: "(Sem descrição)"
                 if(transaction.isActive) {
-                    append("* ${transaction.registeredAt}  |  ${transaction.description}  |  R$ ${transaction.value}\n")
+                    append("* ${DateUtils.format(transaction.registeredAt)}  |  ${transaction.description}  |  R$ ${transaction.value}\n")
                 } else{
-                    append("* ~${transaction.registeredAt}  |  ${transaction.description}  |  R$ ${transaction.value}~\n")
+                    append("* ~${DateUtils.format(transaction.registeredAt)}  |  ${transaction.description}  |  R$ ${transaction.value}~\n")
                 }
             }
         }
