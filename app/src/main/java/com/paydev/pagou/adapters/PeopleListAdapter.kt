@@ -1,10 +1,13 @@
 package com.paydev.pagou.adapters
+
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.paydev.pagou.R
+import com.paydev.pagou.activities.ListTransactionsActivity
 import com.paydev.pagou.models.PersonReport
 import com.paydev.pagou.utils.DateUtils
 
@@ -43,6 +46,15 @@ class PeopleListAdapter(private val personList: List <PersonReport>) : RecyclerV
 
             if (person.total.isZero()) {
                 viewHolder.tvLastPayment.text = "Está quitado"
+            }
+        }
+
+        // ao clicar no card, abre a tela de transações
+        viewHolder.itemView.apply {
+            setOnClickListener {
+                val intent = Intent(context, ListTransactionsActivity::class.java)
+                intent.putExtra("id", person.id)
+                context.startActivity(intent)
             }
         }
 
