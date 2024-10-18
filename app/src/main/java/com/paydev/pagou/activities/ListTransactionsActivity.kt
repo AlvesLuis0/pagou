@@ -12,6 +12,7 @@ import com.paydev.pagou.dialogs.AreYouSure
 import com.paydev.pagou.dialogs.TransactionDialog
 import com.paydev.pagou.use_cases.ClearTransactionUseCase
 import com.paydev.pagou.use_cases.GetPersonReportUseCase
+import com.paydev.pagou.use_cases.SendReportUseCase
 
 class ListTransactionsActivity : AppCompatActivity() {
     private lateinit var person: GetPersonReportUseCase.PersonReport
@@ -68,5 +69,9 @@ class ListTransactionsActivity : AppCompatActivity() {
             ClearTransactionUseCase(this).execute(person.info.id)
             refreshInformations()
         }.show()
+    }
+
+    fun sendReport(view: View?) {
+        SendReportUseCase(this).execute(person.info.id)
     }
 }
