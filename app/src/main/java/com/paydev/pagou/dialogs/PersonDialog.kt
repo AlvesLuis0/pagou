@@ -60,7 +60,6 @@ class PersonDialog(private val context: Context): Builder(context) {
 
     // inserindo cor dos botões
     dialog.getButton(AlertDialog.BUTTON_POSITIVE).apply {
-      // setBackgroundColor(Color.rgb(189, 227, 209)) // cor de fundo
       setBackgroundColor(Color.rgb(93, 167, 78)) // cor de fundo
       setTextColor(Color.rgb(237, 241, 255)) // cor do texto
 
