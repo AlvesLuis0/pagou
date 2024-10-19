@@ -8,16 +8,55 @@
   android:elevation="6dp"
   tools:context=".activities.ListPeopleActivity">
 
-  <LinearLayout
-    android:id="@+id/linearLayout4"
+  <TextView
+    android:id="@+id/person_view"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:fontFamily="sans-serif-black"
+    android:text="Pessoas"
+    android:textSize="35sp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.501"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <com.google.android.material.floatingactionbutton.FloatingActionButton
+    android:id="@+id/floatingActionButton16"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:layout_marginEnd="16dp"
+    android:clickable="true"
+    app:backgroundTint="@color/button"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="1.0"
+    app:layout_constraintStart_toEndOf="@+id/person_view"
+    app:layout_constraintTop_toTopOf="parent"
+    app:srcCompat="@drawable/baseline_settings_24" />
+
+  <View
+    android:id="@+id/view6"
+    android:layout_width="0dp"
+    android:layout_height="5dp"
+    android:layout_marginTop="24dp"
+    android:background="?android:attr/listDivider"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/person_view" />
+
+  <LinearLayout
+    android:id="@+id/linearLayout4"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="10dp"
     android:layout_marginVertical="10dp"
     android:orientation="horizontal"
     android:paddingVertical="5dp"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
+    app:layout_constraintTop_toTopOf="@+id/view6">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
       android:layout_width="wrap_content"
@@ -37,21 +76,12 @@
 
     <android.widget.SearchView
       android:id="@+id/searchView"
-      android:layout_width="250dp"
+      android:layout_width="match_parent"
       android:layout_height="56dp"
       android:layout_margin="3dp"
       android:background="@drawable/search_view_bg"
       android:elevation="6dp"
       app:circularflow_defaultRadius="20dp" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-      android:id="@+id/floatingActionButton16"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_margin="3dp"
-      android:clickable="true"
-      app:backgroundTint="@color/button"
-      app:srcCompat="@drawable/baseline_settings_24" />
 
   </LinearLayout>
 
