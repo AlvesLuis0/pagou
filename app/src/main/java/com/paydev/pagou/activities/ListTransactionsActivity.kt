@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.paydev.pagou.R
 import com.paydev.pagou.adapters.TransactionsListAdapter
 import com.paydev.pagou.dialogs.AreYouSure
+import com.paydev.pagou.dialogs.PersonDialog
 import com.paydev.pagou.dialogs.TransactionDialog
 import com.paydev.pagou.use_cases.ClearTransactionUseCase
 import com.paydev.pagou.use_cases.GetPersonReportUseCase
@@ -69,6 +70,12 @@ class ListTransactionsActivity : AppCompatActivity() {
             ClearTransactionUseCase(this).execute(person.info.id)
             refreshInformations()
         }.show()
+    }
+
+    fun openUpdatePersonDialog(view: View?) {
+        PersonDialog(this) {
+            refreshInformations()
+        }.show(person.info.id)
     }
 
     fun sendReport(view: View?) {

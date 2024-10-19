@@ -95,6 +95,7 @@
           android:layout_height="wrap_content"
           android:layout_margin="6dp"
           android:clickable="true"
+          android:onClick="openUpdatePersonDialog"
           app:backgroundTint="@color/button"
           app:srcCompat="@drawable/baseline_person_24" />
 

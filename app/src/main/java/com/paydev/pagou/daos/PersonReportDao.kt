@@ -8,7 +8,7 @@ import com.paydev.pagou.models.PersonReport
 
 @Dao
 interface PersonReportDao {
-    @Query("SELECT id, name, contact, lastPayment, total FROM PersonReport WHERE id = :personId")
+    @Query("SELECT id, name, contact, others, lastPayment, total FROM PersonReport WHERE id = :personId")
     fun getByPersonId(personId: Long): PersonBill
 
     @Query("SELECT * FROM PersonReport ORDER BY name")

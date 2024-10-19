@@ -13,13 +13,16 @@ import com.paydev.pagou.R
 import com.paydev.pagou.activities.ListTransactionsActivity
 import com.paydev.pagou.models.Person
 import com.paydev.pagou.use_cases.CreatePersonUseCase
+import com.paydev.pagou.use_cases.GetPersonReportUseCase
+import com.paydev.pagou.use_cases.UpdatePersonUseCase
 import com.paydev.pagou.utils.StringUtils
 
-class PersonDialog(private val context: Context): Builder(context) {
+class PersonDialog(private val context: Context, private val callback: (() -> Unit)? = null): Builder(context) {
   // construindo dialog
   private val dialogView = LayoutInflater
     .from(context)
     .inflate(R.layout.activity_add_person, null)
+  private var person: GetPersonReportUseCase.PersonReport? = null
 
   // inputs
   private val nameInput = dialogView
@@ -40,15 +43,16 @@ class PersonDialog(private val context: Context): Builder(context) {
 
   // chama função ao apertar em OK
   private fun execute(): Person {
-    return CreatePersonUseCase(context)
-      .execute(
-        InputUtils.getString(nameInput),
-        InputUtils.getString(contactInput),
-        InputUtils.getStringOrNull(othersInput)
-      )
+    val name = InputUtils.getString(nameInput)
+    val contact = InputUtils.getString(contactInput)
+    val others = InputUtils.getStringOrNull(othersInput)
+    if(person != null)
+      return UpdatePersonUseCase(context).execute(person!!.info.id, name, contact, others)
+    return CreatePersonUseCase(context).execute(name, contact, others)
   }
 
   private fun redirectToNextScreen(personId: Long) {
+    if(person != null) return
     val intent = Intent(context, ListTransactionsActivity::class.java)
     intent.putExtra("id", personId)
     context.startActivity(intent)
@@ -68,6 +72,7 @@ class PersonDialog(private val context: Context): Builder(context) {
         if(person.errors.isEmpty()) {
           dialog.dismiss()
           redirectToNextScreen(person.id)
+          callback?.let { it() }
           return@setOnClickListener
         }
         // montando lista de erros
@@ -81,5 +86,13 @@ class PersonDialog(private val context: Context): Builder(context) {
     }
 
     return dialog
+  }
+
+  fun show(id: Long) {
+    person = GetPersonReportUseCase(context).execute(id)
+    nameInput.setText(person!!.info.name)
+    contactInput.setText(person!!.info.contact)
+    othersInput.setText(person!!.info.others)
+    show()
   }
 }
