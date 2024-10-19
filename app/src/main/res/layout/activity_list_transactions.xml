@@ -127,8 +127,7 @@
           android:backgroundTint="@color/negative_color"
           android:fontFamily="sans-serif-black"
           android:onClick="openClearTransactionsDialog"
-          android:text="Zerar"
-          android:textColor="#FFFF" />
+          android:text="Zerar" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
           android:id="@+id/floatingActionButton17"

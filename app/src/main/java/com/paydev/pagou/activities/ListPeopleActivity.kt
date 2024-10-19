@@ -3,6 +3,7 @@ package com.paydev.pagou.activities
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.paydev.pagou.R
@@ -17,6 +18,7 @@ class ListPeopleActivity : AppCompatActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
 
     super.onCreate(savedInstanceState)
+    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
     setContentView(R.layout.activity_list_people)
 
     // this creates a vertical layout Manager
