@@ -1,5 +1,6 @@
 package com.paydev.pagou.dialogs
 
+import android.app.Activity
 import android.app.AlertDialog
 import android.app.AlertDialog.Builder
 import android.content.Context
@@ -13,6 +14,7 @@ import com.paydev.pagou.R
 import com.paydev.pagou.activities.ListTransactionsActivity
 import com.paydev.pagou.models.Person
 import com.paydev.pagou.use_cases.CreatePersonUseCase
+import com.paydev.pagou.use_cases.DeletePersonUseCase
 import com.paydev.pagou.use_cases.GetPersonReportUseCase
 import com.paydev.pagou.use_cases.UpdatePersonUseCase
 import com.paydev.pagou.utils.StringUtils
@@ -85,10 +87,19 @@ class PersonDialog(private val context: Context, private val callback: (() -> Un
       setTextColor(Color.rgb(237, 241, 255)) // cor do texto
     }
 
+    if(person != null)
+      dialog.getButton(AlertDialog.BUTTON_NEUTRAL).apply {
+        setBackgroundColor(Color.rgb(40, 50, 200))
+        setTextColor(Color.rgb(237, 241, 255))
+      }
     return dialog
   }
 
   fun show(id: Long) {
+    setNeutralButton("apagar") { _, _ -> AreYouSure(context) {
+      DeletePersonUseCase(context).execute(id)
+      (context as Activity).finish()
+    }.show() }
     person = GetPersonReportUseCase(context).execute(id)
     nameInput.setText(person!!.info.name)
     contactInput.setText(person!!.info.contact)
