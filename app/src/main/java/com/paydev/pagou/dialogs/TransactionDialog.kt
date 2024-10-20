@@ -1,6 +1,5 @@
 package com.paydev.pagou.dialogs
 
-import android.app.Activity
 import android.app.AlertDialog
 import android.app.AlertDialog.BUTTON_POSITIVE
 import android.app.AlertDialog.Builder

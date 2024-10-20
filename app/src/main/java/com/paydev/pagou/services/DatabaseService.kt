@@ -28,7 +28,8 @@ abstract class DatabaseService : RoomDatabase() {
     fun getInstance(context: Context): DatabaseService {
       if(instance == null) {
         instance = Room
-          .inMemoryDatabaseBuilder(context, DatabaseService::class.java)
+          // .inMemoryDatabaseBuilder(context, DatabaseService::class.java)
+          .databaseBuilder(context, DatabaseService::class.java, "pagou.db")
           .allowMainThreadQueries()
           .build()
       }
