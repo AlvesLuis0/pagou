@@ -24,7 +24,7 @@ class PersonDialog(private val context: Context, private val callback: (() -> Un
   private val dialogView = LayoutInflater
     .from(context)
     .inflate(R.layout.activity_add_person, null)
-  private var person: GetPersonReportUseCase.PersonReport? = null
+  private var person: GetPersonReportUseCase.PersonReportInfo? = null
 
   // inputs
   private val nameInput = dialogView

@@ -16,7 +16,7 @@ import com.paydev.pagou.use_cases.GetPersonReportUseCase
 import com.paydev.pagou.use_cases.SendReportUseCase
 
 class ListTransactionsActivity : AppCompatActivity() {
-    private lateinit var person: GetPersonReportUseCase.PersonReport
+    private lateinit var person: GetPersonReportUseCase.PersonReportInfo
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,6 +57,7 @@ class ListTransactionsActivity : AppCompatActivity() {
         tvTotalDescription.text = totalDescription
         transactionsRecyclerView.layoutManager = LinearLayoutManager(this)
         transactionsRecyclerView.adapter = TransactionsListAdapter(person.transactions)
+        { refreshInformations() }
     }
 
     fun openAddTransactionDialog(view: View?) {

@@ -13,7 +13,7 @@ class UpdateTransactionUseCase (private val context: Context) {
         val transaction = AddTransactionUseCase(context)
             .execute(personId, value, description)
         if (transaction.errors.isEmpty()) {
-            transactionDao.inactivateTransaction(id)
+            transactionDao.inactivate(id)
         }
 
         return transaction

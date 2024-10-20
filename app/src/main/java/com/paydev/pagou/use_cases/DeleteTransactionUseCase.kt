@@ -7,6 +7,6 @@ class DeleteTransactionUseCase(context: Context) {
     private val transactionDao = DatabaseService.getInstance(context).transactionDao()
 
     fun execute (id: Long){
-        transactionDao.inactivateTransaction(id)
+        transactionDao.inactivate(id)
     }
 }

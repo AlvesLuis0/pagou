@@ -5,21 +5,20 @@ import androidx.room.Insert
 import androidx.room.Query
 import com.paydev.pagou.models.Currency
 import com.paydev.pagou.models.Transaction
-import com.paydev.pagou.models.TransactionSummary
 
 @Dao
 interface TransactionDao {
     @Insert
     fun insert (transaction: Transaction): Long
 
-    @Query("SELECT id,value,description,registeredAt,isActive FROM `Transaction` WHERE personId = :personId ORDER BY registeredAt DESC")
-    fun getByPersonId(personId: Long): List<TransactionSummary>
+    @Query("SELECT * FROM `Transaction` WHERE personId = :personId ORDER BY registeredAt DESC")
+    fun getByPersonId(personId: Long): List<Transaction>
 
     @Query("DELETE FROM `Transaction` WHERE personId = :personId")
     fun deleteAllByPersonId(personId: Long)
 
     @Query("UPDATE `Transaction` SET isActive = 0 WHERE id = :id")
-    fun inactivateTransaction(id: Long)
+    fun inactivate(id: Long)
 
     @Query("SELECT SUM(value) FROM `transaction` WHERE isActive = 1")
     fun getTotal(): Currency

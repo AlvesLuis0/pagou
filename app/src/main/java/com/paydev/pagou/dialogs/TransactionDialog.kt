@@ -1,5 +1,6 @@
 package com.paydev.pagou.dialogs
 
+import android.app.Activity
 import android.app.AlertDialog
 import android.app.AlertDialog.BUTTON_POSITIVE
 import android.app.AlertDialog.Builder
@@ -13,9 +14,11 @@ import com.paydev.pagou.R
 import com.paydev.pagou.inputs.CurrencyInput
 import com.paydev.pagou.models.Transaction
 import com.paydev.pagou.use_cases.AddTransactionUseCase
+import com.paydev.pagou.use_cases.InactivateTransactionUseCase
+import com.paydev.pagou.use_cases.UpdateTransactionUseCase
 import com.paydev.pagou.utils.StringUtils
 
-class TransactionDialog(context: Context?, private val personId: Long, private val callback: () -> Unit) : Builder(context) {
+class TransactionDialog(context: Context?, private val personId: Long, private val transaction: Transaction? = null, private val callback: () -> Unit) : Builder(context) {
   // construindo dialog
   private val dialogView = LayoutInflater
     .from(context)
@@ -32,7 +35,6 @@ class TransactionDialog(context: Context?, private val personId: Long, private v
   // construtor
   init {
     setView(dialogView)
-    setNeutralButton("abater") { _, _ -> }
     setNegativeButton("cancelar") { _, _ -> }
     setPositiveButton("ok") { _, _ -> }
     valueInput.filters = arrayOf(CurrencyInput())
@@ -40,12 +42,11 @@ class TransactionDialog(context: Context?, private val personId: Long, private v
 
   // ao confirmar
   private fun execute(): Transaction {
-    return AddTransactionUseCase(context)
-      .execute(
-        personId,
-        InputUtils.getDoubleOrNull(valueInput) ?: 0.toDouble(),
-        InputUtils.getStringOrNull(descriptionInput)
-      )
+    val value = InputUtils.getDoubleOrNull(valueInput) ?: 0.toDouble()
+    val description = InputUtils.getStringOrNull(descriptionInput)
+    if(transaction != null)
+      return UpdateTransactionUseCase(context).execute(transaction.id, personId, description, value)
+    return AddTransactionUseCase(context).execute(personId, value, description)
   }
 
   /*
@@ -79,5 +80,15 @@ class TransactionDialog(context: Context?, private val personId: Long, private v
       setTextColor(Color.rgb(237, 241, 255))
     }
     return dialog
+  }
+
+  fun show(id: Long) {
+    setNeutralButton("inativar") { _, _ -> AreYouSure(context) {
+      InactivateTransactionUseCase(context).execute(id)
+      callback()
+    }.show() }
+    descriptionInput.setText(transaction!!.description)
+    valueInput.setText(transaction.value.toString())
+    show()
   }
 }

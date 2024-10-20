@@ -7,10 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.paydev.pagou.R
-import com.paydev.pagou.models.TransactionSummary
+import com.paydev.pagou.dialogs.TransactionDialog
+import com.paydev.pagou.models.Transaction
 import com.paydev.pagou.utils.DateUtils
 
-class TransactionsListAdapter(private val data: List<TransactionSummary>) : RecyclerView.Adapter<TransactionsListAdapter.ViewHolder>() {
+class TransactionsListAdapter(private val data: List<Transaction>, private val callback: () -> Unit) : RecyclerView.Adapter<TransactionsListAdapter.ViewHolder>() {
   class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     val tvDescription = view.findViewById<TextView>(R.id.tv_description)
     val tvRegisteredAt = view.findViewById<TextView>(R.id.tv_registered_at)
@@ -46,5 +47,11 @@ class TransactionsListAdapter(private val data: List<TransactionSummary>) : Recy
     if(!transaction.isActive)
       listOf(viewHolder.tvDescription, viewHolder.tvRegisteredAt, viewHolder.tvValue)
         .forEach { item -> item.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG }
+
+    // ao clicar no card, abre o dialog de atualização
+    viewHolder.itemView.apply {
+      setOnClickListener { TransactionDialog(context, transaction.personId, transaction)
+      { callback() }.show(transaction.id) }
+    }
   }
 }
