@@ -1,9 +1,5 @@
 package com.paydev.pagou.models
 
-import android.icu.text.DecimalFormat
-import android.icu.text.NumberFormat
-import java.util.Locale
-
 class Currency {
   private var value: Long = 0
 
@@ -44,9 +40,6 @@ class Currency {
   }
 
   override fun toString(): String {
-    val locale = Locale("en", "US")
-    val formatter = NumberFormat.getInstance(locale) as DecimalFormat
-    formatter.applyPattern("#.##")
-    return formatter.format(getValue())
+    return "%.2f".format(getValue()).replace(',', '.')
   }
 }
